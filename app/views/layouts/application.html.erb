@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>BrainTrain</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>BrainTrain</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
 
-  <body>
-    <%= yield %>
-  </body>
+<!--Bootstrap current_user-->
+  <script type="text/javascript">
+    <% if user_signed_in? %>
+      window.currentUser = <%= render("api/users/user.json.jbuilder",
+      user: current_user).html_safe %>
+      window.authenticityToken = "<%= form_authenticity_token %>"
+    <% end %>
+  </script>
+
+  <%= yield %>
+
+</body>
 </html>
