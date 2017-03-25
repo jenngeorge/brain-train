@@ -26,6 +26,13 @@
 - `GET   api/decks/:id`
 - `DELETE   api/decks/:id`
 
+### Subjects
+- `POST   api/subjects`
+- `PATCH   api/subjects/:id`
+- `GET   api/subjects`
+- `GET   api/subjects/:id`
+- `DELETE   api/subjects/:id`
+
 ### Cards
 - `POST   api/cards`
 - `PATCH   api/cards/:id`

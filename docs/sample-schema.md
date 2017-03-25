@@ -15,14 +15,23 @@ column name     | data type | details
 id              | integer   | not null, primary key
 user_id         | integer   | not null, foreign key
 title           | string    | not null
+subject_id      | integer   | not null, foreign key
 
-## deck_follows
+## decks
 
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 user_id         | integer   | not null, foreign key
-deck_id         | integer   | not null, foreign key
+title           | string    | not null
+
+## subject_follows
+
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+user_id         | integer   | not null, foreign key
+subject_id         | integer   | not null, foreign key
 
 ## cards
 

@@ -6,6 +6,19 @@
       username: "Jenn"
     }
   },
+  subjects: {
+    byId: {
+      1: {
+        title: "CS",
+        deckIds: [1, 2]
+      },
+      2: {
+        title: "Languages",
+        deckIds: [3, 4]
+      }
+    }
+    allIds: [1, 2]
+  },
   decks: {
     byId: {
       1: {
