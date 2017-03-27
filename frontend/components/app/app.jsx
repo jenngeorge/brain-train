@@ -11,7 +11,6 @@ import HeaderContainer from '../header/header_container';
 const App = (props) => (
     <Router>
       <div>
-        <h1>Hi I'm App</h1>
         <HeaderContainer />
         <Route path="/welcome" component={Welcome} />
         <Route path="/library" component={Library} />

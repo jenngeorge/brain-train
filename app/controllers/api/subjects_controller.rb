@@ -26,11 +26,11 @@ class Api::SubjectsController < ApplicationController
   end
 
   def show
-    @subject = Subject.find(params[:id])
+    @subject = Subject.includes(:decks).find(params[:id])
   end
 
   def index
-    @subjects = Subject.all
+    @subjects = Subject.includes(:decks)
     render :index
   end
 

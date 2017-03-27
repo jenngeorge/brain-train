@@ -52,25 +52,35 @@ class Header extends React.Component{
     let sessionButtons = () => {
       if (this.props.session.currentUser){
         return(
-          <div className="signout-button">
+          <span className="signout-button">
             <button onClick={this.handleSignout}>Sign Out</button>
             <Link to={`/users/${this.props.session.currentUser.id}`}>
               Me
             </Link>
-          </div>
+          </span>
         );
       } else {
         return(
-          <div className="signin-buttons">
+          <span className="signin-buttons">
             <button onClick={this.openModal.bind(this, "signin")}>Sign in</button>
             <button onClick={this.openModal.bind(this, "signup")}>Sign up</button>
-          </div>
+          </span>
         );
       }
     };
 
     return(
-        <div className="nav-container">
+        <div className="header-container cf">
+          <span className="logo button">
+            <Link to="/welcome">
+              BrainTrain
+            </Link>
+          </span>
+          <span className="header-links button">
+            <Link to="/library">
+              Library
+            </Link>
+          </span>
           {sessionButtons()}
 
             <Modal

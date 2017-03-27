@@ -2,6 +2,7 @@ import {RECEIVE_SUBJECT,
         RECEIVE_SUBJECTS,
         REMOVE_SUBJECT} from '../actions/subject_actions';
 import {merge, omit} from 'lodash';
+import {subjectHelper} from './helpers';
 
 const SubjectReducer = (state = {byId: {}, allIds:[]}, action) => {
   Object.freeze(state);
@@ -9,11 +10,14 @@ const SubjectReducer = (state = {byId: {}, allIds:[]}, action) => {
   switch(action.type) {
     case RECEIVE_SUBJECT:
       newState.allIds.push(action.subject.id);
-      newState.byId[action.subject.id] = action.subject;
+      newState.byId[action.subject.id] = subjectHelper(action.subject);
       return newState;
     case RECEIVE_SUBJECTS:
-      let byId = action.subjects;
       let allIds = Object.keys(action.subjects);
+      Object.keys(action.subjects).forEach(key => {
+        action.subjects[key] = subjectHelper(action.subjects[key]);
+      });
+      let byId = action.subjects;
       return {byId, allIds};
     case REMOVE_SUBJECT:
       newState = omit(newState.byId, action.subjectId);

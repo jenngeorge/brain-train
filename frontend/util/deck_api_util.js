@@ -6,6 +6,14 @@ export const createDeck = (deck) => {
   });
 };
 
+export const updateDeck = (deck, id) => {
+  return $.ajax({
+    method: 'patch',
+    url: `/api/decks/${id}`,
+    data: deck
+  });
+};
+
 export const deleteDeck = (id) => {
   return $.ajax({
     method: "delete",
@@ -20,9 +28,10 @@ export const fetchDeck = (id) => {
   });
 };
 
-export const fetchDecks = () => {
+export const fetchDecks = (id) => {
   return $.ajax({
     method: "get",
-    url: "/api/decks"
+    url: "/api/decks",
+    data: {subjectId: id}
   });
 };

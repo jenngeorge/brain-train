@@ -1,18 +1,27 @@
 import {RECEIVE_DECK,
         RECEIVE_DECKS,
         REMOVE_DECK} from '../actions/deck_actions';
+import {RECEIVE_SUBJECTS,
+        RECEIVE_SUBJECT} from '../actions/subject_actions';
 import {merge, omit} from 'lodash';
 
-const DeckReducer = (state = {}, action) => {
+const DeckReducer = (state = {byId: {}, allIds: []}, action) => {
   Object.freeze(state);
-
+  let newState = merge({}, state);
   switch(action.type) {
     case RECEIVE_DECK:
-      return merge({}, state, {[action.deck.id]: action.deck});
+      newState.allIds.push(action.deck.id);
+      newState.byId[action.deck.id] = action.deck;
+      return newState;
     case RECEIVE_DECKS:
-      return action.decks;
+      let allIds = Object.keys(action.decks);
+      let byId = action.decks;
+      return {byId, allIds};
     case REMOVE_DECK:
-      return omit(state, action.deckId);
+      newState = omit(state, action.deckId);
+      let idx = newState.allIds.indexOf(action.deckId);
+      newState.allIds.splice(idx, 1);
+      return newState;
     default:
       return state;
   }

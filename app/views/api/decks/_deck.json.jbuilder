@@ -1,4 +1,4 @@
-json.extract! @deck, :id, :title, :user_id, :subject_id
+json.extract! deck, :title, :user_id, :id, :subject_id
 
 # json.cards do
 #   @deck.cards.each do |deck|

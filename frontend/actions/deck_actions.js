@@ -5,11 +5,11 @@ export const RECEIVE_DECK = "RECEIVE_DECK";
 export const RECEIVE_DECKS = "RECEIVE_DECKS";
 export const REMOVE_DECK = "REMOVE_DECK";
 
-export const createDeck = deck => dispatch => (
-  APIUtil.createDeck(deck)
-    .then(createdDeck => dispatch(receiveDeck(createdDeck)),
-      err => dispatch(receiveErrors(err.responseJSON)))
-);
+// export const createDeck = deck => dispatch => (
+//   APIUtil.createDeck(deck)
+//     .then(createdDeck => dispatch(receiveDeck(createdDeck)),
+//       err => dispatch(receiveErrors(err.responseJSON)))
+// );
 
 export const receiveDeck = deck => ({
   type: RECEIVE_DECK,
@@ -22,8 +22,8 @@ export const fetchDeck = deckId => dispatch => (
       err => dispatch(receiveErrors(err.resposneJSON)))
 );
 
-export const fetchDecks = () => dispatch => (
-  APIUtil.fetchDecks()
+export const fetchDecks = subjectId => dispatch => (
+  APIUtil.fetchDecks(subjectId)
     .then(decks => dispatch(receiveDecks(decks)),
       err => dispatch(receiveErrors(err.responseJSON)))
 );

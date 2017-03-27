@@ -23,11 +23,11 @@ export const receiveSubject = subject => ({
   subject
 });
 
-// export const fetchSubject = subjectId => dispatch => (
-//   APIUtil.fetchSubject(subjectId)
-//     .then(subject => dispatch(receiveSubject(subject)),
-//       err => dispatch(receiveErrors(err.resposneJSON)))
-// );
+export const fetchSubject = subjectId => dispatch => (
+  APIUtil.fetchSubject(subjectId)
+    .then(subject => dispatch(receiveSubject(subject)),
+      err => dispatch(receiveErrors(err.resposneJSON)))
+);
 
 export const fetchSubjects = () => dispatch => (
   APIUtil.fetchSubjects()

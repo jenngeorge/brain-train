@@ -31,7 +31,7 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 user_id         | integer   | not null, foreign key
-subject_id         | integer   | not null, foreign key
+subject_id      | integer   | not null, foreign key
 
 ## cards
 

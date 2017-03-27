@@ -30,10 +30,15 @@ class Api::DecksController < ApplicationController
   end
 
   def index
-    @decks = Deck.all
+    if params[:subjectId]
+      @decks = Deck.includes(:cards)
+      .where(subject_id: params[:subjectId])
+    else
+      @decks = Deck.includes(:cards)
+    end
   end
 
   def deck_params
-    params.require(:deck).permit(:user_id, :title)
+    params.require(:deck).permit(:user_id, :title, :subject_id)
   end
 end
