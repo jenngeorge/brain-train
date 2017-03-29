@@ -18,18 +18,16 @@ class SubjectShow extends React.Component {
   }
 
   componentWillMount(){
-    if (!this.props.subject){
-      this.fetchSubject(this.props.subjectId);
-			this.props.fetchDecks(this.props.subjectId);
-    }
+    this.fetchSubject(this.props.subjectId);
+		this.props.fetchDecks(this.props.subjectId);
   }
 
   componentDidUpdate(nextProps){
-    if (!nextProps.subject){
-      this.fetchSubject(this.props.subjectId);
-    }
-		this.props.fetchDecks(this.props.subjectId);
-  }
+		if (nextProps.subjectId !== this.props.subjectId){			
+			this.fetchSubject(this.props.subjectId);
+			this.props.fetchDecks(this.props.subjectId);
+		}
+	}
 
   fetchSubject(id){
     this.props.fetchSubject(id)

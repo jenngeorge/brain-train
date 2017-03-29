@@ -5,5 +5,5 @@ class Deck < ApplicationRecord
 
   belongs_to :subject
 
-  has_many :cards
+  has_many :cards, dependent: :destroy
 end

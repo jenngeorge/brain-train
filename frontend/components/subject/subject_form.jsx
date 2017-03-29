@@ -5,10 +5,11 @@ class SubjectForm extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			title: "",
+			title: this.props.subjectId ? this.props.subjects[this.props.subjectId].title : "",
 			changedId: null
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleDelete = this.handleDelete.bind(this);
 	}
 
 	componentWillMount(){
@@ -23,7 +24,6 @@ class SubjectForm extends React.Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
-
 
 		let that = this;
 
@@ -67,6 +67,20 @@ class SubjectForm extends React.Component {
 		);
 	}
 
+	handleDelete(){
+		let that = this;
+		let deletedId = this.props.subjectId;
+		let allSubjectIds = this.props.allSubjectIds;
+		this.props.deleteSubject(this.props.subjectId)
+			.then(() => that.props.removeSubject(deletedId),
+						err => that.props.receiveErrors(err.responseJSON))
+						.then(()=> {
+							let idx = allSubjectIds.indexOf(deletedId);
+							allSubjectIds.splice(idx, 1);
+							that.setState({changedId: allSubjectIds[0]});
+							});
+	}
+
 	render() {
 		let changedId = this.state.changedId;
 		if (changedId && this.props.subjects[changedId]){
@@ -74,6 +88,15 @@ class SubjectForm extends React.Component {
 				<Redirect to={`/library/${changedId}`} />
 			);
 		} else {
+			let deleteButton;
+			if (this.props.formType === "update"){
+				deleteButton = (
+					<button onClick={this.handleDelete}>
+						Delete
+					</button>
+				);
+			}
+
 			return (
 				<div className="subject-form-container">
 					<form onSubmit={this.handleSubmit}>
@@ -87,6 +110,7 @@ class SubjectForm extends React.Component {
 						<button><input type="submit" value="Submit" /></button>
 						<button onClick={this.props.toggleSubjectForm}>cancel</button>
 					</form>
+					{deleteButton}
 				</div>
 			);
 		}

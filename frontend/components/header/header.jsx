@@ -54,9 +54,6 @@ class Header extends React.Component{
         return(
           <span className="signout-button">
             <button onClick={this.handleSignout}>Sign Out</button>
-            <Link to={`/users/${this.props.session.currentUser.id}`}>
-              Me
-            </Link>
           </span>
         );
       } else {

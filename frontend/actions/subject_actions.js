@@ -45,8 +45,8 @@ export const removeSubject = subjectId => ({
   subjectId
 });
 
-// export const deleteSubject = subjectId => dispatch => (
-//   APIUtil.deleteSubject(subjectId)
-//     .then(() => dispatch(removeSubject(subjectId))),
-//       err => dispatch(receiveErrors(err.responseJSON))
-// );
+export const deleteSubject = subjectId => dispatch => (
+  APIUtil.deleteSubject(subjectId)
+    .then(() => dispatch(removeSubject(subjectId))),
+      err => dispatch(receiveErrors(err.responseJSON))
+);

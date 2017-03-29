@@ -10,6 +10,7 @@ class DeckForm extends React.Component {
       user_id: this.props.currentUserId
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleDelete = this.handleDelete.bind(this);
 	}
 
 	componentWillMount(){
@@ -40,7 +41,7 @@ class DeckForm extends React.Component {
 			this.props.updateDeck({deck}, this.props.deck.id).then(
 				(updatedDeck)=> {
           that.props.toggleDeckForm();
-					that.props.fetchSubject(updatedDeck.subject_id);
+					// that.props.fetchSubject(updatedDeck.subject_id);
 					that.props.fetchSubject(that.props.subjectId);
 				},
 				err => that.props.receiveErrors(err.responseJSON)
@@ -60,12 +61,25 @@ class DeckForm extends React.Component {
 		);
 	}
 
+	handleDelete(){
+		this.props.deleteDeck(this.props.deck.id);
+	}
+
 	render() {
     let dropdownSubjectOptions = Object.keys(this.props.subjects).map(key => (
       <option key={key} value={key} >
         {this.props.subjects[key].title}
       </option>
     ));
+
+		let deleteButton;
+		if (this.props.formType === "update"){
+			deleteButton = (
+				<button onClick={this.handleDelete}>
+					Delete
+				</button>
+			);
+		}
 
 		return (
 			<div className="deck-form-container">
@@ -75,7 +89,7 @@ class DeckForm extends React.Component {
 						<input type="text"
 							value={this.state.title}
 							onChange={this.update("title")}
-							className="subject-input" />
+							className="deck-input" />
 					</label>
           <label> Subject:
 						<select onChange={this.update("subject_id")} value={this.props.subjectId}>
@@ -85,6 +99,7 @@ class DeckForm extends React.Component {
 					<button><input type="submit" value="Submit" /></button>
 					<button onClick={this.props.toggleDeckForm}>cancel</button>
 				</form>
+				{deleteButton}
 			</div>
 		);
 

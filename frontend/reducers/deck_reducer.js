@@ -18,7 +18,7 @@ const DeckReducer = (state = {byId: {}, allIds: []}, action) => {
       let byId = action.decks;
       return {byId, allIds};
     case REMOVE_DECK:
-      newState = omit(state, action.deckId);
+      newState.byId = omit(newState.byId, action.deckId);
       let idx = newState.allIds.indexOf(action.deckId);
       newState.allIds.splice(idx, 1);
       return newState;

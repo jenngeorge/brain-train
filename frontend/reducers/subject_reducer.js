@@ -20,7 +20,8 @@ const SubjectReducer = (state = {byId: {}, allIds:[]}, action) => {
       let byId = action.subjects;
       return {byId, allIds};
     case REMOVE_SUBJECT:
-      newState = omit(newState.byId, action.subjectId);
+
+      newState.byId = omit(newState.byId, action.subjectId);
       let idx = newState.allIds.indexOf(action.subjectId);
       newState.allIds.splice(idx, 1);
       return newState;
