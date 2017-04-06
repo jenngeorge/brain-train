@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class SubjectIndex extends React.Component{
 
@@ -25,4 +25,4 @@ class SubjectIndex extends React.Component{
   }
 }
 
-export default SubjectIndex;
+export default withRouter(SubjectIndex);

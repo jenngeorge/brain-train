@@ -1,31 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import DeckFormContainer from './deck_form_container';
 
 class DeckIndexItem extends React.Component{
   constructor(props){
     super(props);
-    this.state={
-      deckFormOpen: false
-    };
-
-    this.toggleDeckForm = this.toggleDeckForm.bind(this);
+    this.handleStudyClick = this.handleStudyClick.bind(this);
   }
 
-  toggleDeckForm(){
-    this.setState({deckFormOpen: !this.state.deckFormOpen});
-  }
-
-  deckForm(){
-    if (this.state.deckFormOpen){
-      return (
-        < DeckFormContainer
-        formType="update"
-        deck={this.props.deck}
-        toggleDeckForm={this.toggleDeckForm}
-        subjectId={this.props.deck.subject_id}/>
-      );
-    }
+  handleStudyClick(){
+    this.props.history.push(`/study/${this.props.deck.id}`);
   }
 
 
@@ -33,17 +17,16 @@ class DeckIndexItem extends React.Component{
 
     return(
       <div className="deck-index-item">
-        <Link to={`/study/${this.props.deck.id}`}>
+        <h2 onClick={this.handleStudyClick}>
           {this.props.deck.title}
-        </Link>
-        <button onClick={this.toggleDeckForm}>
+        </h2>
+        <Link to={`/edit/${this.props.deck.id}`}>
           Edit Deck
-        </button>
-        {this.deckForm()}
+        </Link>
       </div>
     );
 
   }
 }
 
-export default DeckIndexItem;
+export default withRouter(DeckIndexItem);

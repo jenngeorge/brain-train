@@ -23,7 +23,7 @@ class SubjectShow extends React.Component {
   }
 
   componentDidUpdate(nextProps){
-		if (nextProps.subjectId !== this.props.subjectId){			
+		if (nextProps.subjectId !== this.props.subjectId){
 			this.fetchSubject(this.props.subjectId);
 			this.props.fetchDecks(this.props.subjectId);
 		}

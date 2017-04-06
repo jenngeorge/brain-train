@@ -15,6 +15,7 @@ class DeckForm extends React.Component {
 
 	componentWillMount(){
 		this.props.clearErrors();
+		this.props.fetchSubjects();
 	}
 
 	update(field) {
@@ -41,8 +42,7 @@ class DeckForm extends React.Component {
 			this.props.updateDeck({deck}, this.props.deck.id).then(
 				(updatedDeck)=> {
           that.props.toggleDeckForm();
-					// that.props.fetchSubject(updatedDeck.subject_id);
-					that.props.fetchSubject(that.props.subjectId);
+					that.props.receiveDeck(updatedDeck);
 				},
 				err => that.props.receiveErrors(err.responseJSON)
 			);

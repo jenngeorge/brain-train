@@ -13,6 +13,7 @@ class LibrarySidebar extends React.Component{
     this.toggleSubjectForm = this.toggleSubjectForm.bind(this);
   }
 
+
   toggleSubjectForm() {
     this.setState({ formOpen: !this.state.formOpen });
   }

@@ -5,10 +5,7 @@ import SubjectContainer from '../subject/subject_container';
 
 const Library = (props) => (
     <Router>
-      <div className="library-container">
         <LibrarySidebar />
-        <Route path="/library/:subjectId" component={SubjectContainer} />
-      </div>
     </Router>
   );
 
