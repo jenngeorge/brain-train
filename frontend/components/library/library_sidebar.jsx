@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, withRouter } from 'react-router-dom';
 import SubjectIndexContainer from '../subject/subject_index_container';
 import SubjectFormContainer from '../subject/subject_form_container';
 
@@ -45,4 +45,4 @@ class LibrarySidebar extends React.Component{
 }
 
 
-export default LibrarySidebar;
+export default withRouter(LibrarySidebar);

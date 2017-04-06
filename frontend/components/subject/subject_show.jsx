@@ -1,4 +1,5 @@
 import React from 'react';
+import {withRouter, Link} from 'react-router-dom';
 import SubjectFormContainer from './subject_form_container';
 import DeckIndexContainer from '../deck/deck_index_container';
 import DeckFormContainer from '../deck/deck_form_container';
@@ -85,4 +86,4 @@ class SubjectShow extends React.Component {
 
 }
 
-export default SubjectShow;
+export default withRouter(SubjectShow);

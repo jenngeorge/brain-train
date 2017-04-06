@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, withRouter } from 'react-router-dom';
 
 class LibrarySidebar extends React.Component{
   constructor(){
@@ -11,11 +11,11 @@ class LibrarySidebar extends React.Component{
       <section className="sidebar-container">
         <Link to="/library">Library</Link>
         <div>Deck Title</div>
-        
+
       </section>
     );
   }
 }
 
 
-export default LibrarySidebar;
+export default withRouter(LibrarySidebar);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router';
+import { Link, Redirect } from 'react-router-dom';
 
 class DeckForm extends React.Component {
 	constructor(props) {
@@ -92,7 +92,7 @@ class DeckForm extends React.Component {
 							className="deck-input" />
 					</label>
           <label> Subject:
-						<select onChange={this.update("subject_id")} value={this.props.subjectId}>
+						<select onChange={this.update("subject_id")} value={this.state.subjectId}>
               {dropdownSubjectOptions}
 						</select>
 					</label>
