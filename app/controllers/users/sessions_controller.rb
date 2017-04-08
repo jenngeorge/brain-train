@@ -1,5 +1,6 @@
 class Users::SessionsController < Devise::SessionsController
 # before_action :configure_sign_in_params, only: [:create]
+protect_from_forgery prepend: true
 respond_to :json
 
   # GET /resource/sign_in
