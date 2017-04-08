@@ -11,6 +11,12 @@ export const createCard = card => dispatch => (
       err => dispatch(receiveErrors(err.responseJSON)))
 );
 
+export const updateCard = (card, id) => dispatch => (
+  APIUtil.updateCard(card, id)
+    .then(updatedCard => dispatch(receiveCard(updatedCard)),
+      err => dispatch(receiveErrors(err.responseJSON)))
+);
+
 export const receiveCard = card => ({
   type: RECEIVE_CARD,
   card
