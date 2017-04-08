@@ -10,15 +10,8 @@ class SessionForm extends React.Component {
 	}
 
 	componentDidUpdate(nextProps) {
-		this.redirectIfLoggedIn();
 		if (this.props.formType !== nextProps.formType){
 			this.props.clearErrors();
-		}
-	}
-
-	redirectIfLoggedIn() {
-		if (this.props.loggedIn) {
-			this.props.router.push("/");
 		}
 	}
 

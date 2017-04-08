@@ -5,7 +5,7 @@ import {
   Link,
   Redirect,
   withRouter
-} from 'react-router-dom'
+} from 'react-router-dom';
 import Modal from 'react-modal';
 
 import SessionForm from '../session/session_form';
@@ -26,7 +26,7 @@ class Header extends React.Component{
   }
 
   handleSignout(){
-    this.props.signout().then(this.props.history.push("/"));
+    this.props.signout().then(this.props.history.push("/welcome"));
   }
 
   closeModal() {
@@ -59,8 +59,12 @@ class Header extends React.Component{
       } else {
         return(
           <span className="signin-buttons">
-            <button onClick={this.openModal.bind(this, "signin")}>Sign in</button>
-            <button onClick={this.openModal.bind(this, "signup")}>Sign up</button>
+            <button onClick={this.openModal.bind(this, "signin")}>
+              Sign in
+            </button>
+            <button onClick={this.openModal.bind(this, "signup")}>
+              Sign up
+            </button>
           </span>
         );
       }

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 // https://reacttraining.com/react-router/web/example/auth-workflow
 
 import Welcome from '../welcome/welcome';
-import Home from '../home/home';
+import HomeContainer from '../home/home_container';
 
 import HeaderContainer from '../header/header_container';
 
@@ -15,7 +15,7 @@ const App = (props) => (
         <HeaderContainer />
         <Switch>
           <Route exact path="/welcome" component={Welcome} />
-          <Route path="/" component={Home} />
+          <Route path="/" component={HomeContainer} />
         </Switch>
       </div>
     </Router>
