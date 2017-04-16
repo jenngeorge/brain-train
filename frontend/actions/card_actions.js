@@ -49,3 +49,17 @@ export const deleteCard = cardId => dispatch => (
     .then(() => dispatch(removeCard(cardId))),
       err => dispatch(receiveErrors(err.responseJSON))
 );
+
+// card score actions
+
+export const createCardScore = cardScore => dispatch => (
+  APIUtil.createCardScore(cardScore)
+    .then(card => dispatch(receiveCard(card)),
+      err => dispatch(receiveErrors(err.responseJSON)))
+);
+
+export const updateCardScore = (cardScore, id) => dispatch => (
+  APIUtil.updateCardScore(cardScore, id)
+    .then(updatedCard => dispatch(receiveCard(updatedCard)),
+      err => dispatch(receiveErrors(err.responseJSON)))
+);

@@ -1,3 +1,5 @@
+require 'byebug'
+
 class Api::CardsController < ApplicationController
 
     def create
@@ -25,15 +27,15 @@ class Api::CardsController < ApplicationController
       render :show
     end
 
-    def show
-      @card = Card.find(params[:id])
+    def shoß
+      @card = Card.includes(:card_scores).find(params[:id])
     end
 
     def index
       if params[:deckId]
-        @cards = Card.where(deck_id: params[:deckId])
+        @cards = Card.includes(:card_scores).where(deck_id: params[:deckId])
       else
-        @cards = Card.all
+        @cards = Card.includes(:card_scores).all
       end
     end
 

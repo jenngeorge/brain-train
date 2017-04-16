@@ -35,3 +35,21 @@ export const fetchCards = (id) => {
     data: {subjectId: id}
   });
 };
+
+// card scores
+
+export const createCardScore = (card_score) => {
+  return $.ajax({
+    method: 'post',
+    url: '/api/card_scores',
+    data: card_score
+  });
+};
+
+export const updateCardScore = (card_score, id) => {
+  return $.ajax({
+    method: 'patch',
+    url: `/api/card_scores/${id}`,
+    data: card_score
+  });
+};

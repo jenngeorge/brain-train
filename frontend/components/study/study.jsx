@@ -23,7 +23,9 @@ class Study extends React.Component{
           deck={this.props.deck || {}}/>
         <StudyCard
           cards={this.props.cards || {}}
-          updateCard={this.props.updateCard}/>
+          updateCardScore={this.props.updateCardScore}
+          createCardScore={this.props.createCardScore}
+          currentUser={this.props.currentUser}/>
       </div>
     );
   }

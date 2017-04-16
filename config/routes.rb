@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :index]
     resources :subjects
     resources :decks
-    resources :cards 
+    resources :cards
+    resources :card_scores, only: [:create, :update]
   end
 
   get '*path', to: 'static_pages#root'
