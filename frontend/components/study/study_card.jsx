@@ -14,6 +14,7 @@ class StudyCard extends React.Component {
     this.prevCard = this.prevCard.bind(this);
 		this.currentCard = this.currentCard.bind(this);
 		this.createCurrentCardScore = this.createCurrentCardScore.bind(this);
+		this.updateCurrentCardScore = this.updateCurrentCardScore.bind(this);
 	}
 
 	currentCard(){
@@ -24,13 +25,18 @@ class StudyCard extends React.Component {
 	createCurrentCardScore(){
 		let currentCard = this.currentCard();
 		if (currentCard.card_score && currentCard.card_score.length === 0 ){
-			debugger
 			let card_score = {card_score:
 				{user_id: this.props.currentUser.id,
 				card_id: currentCard.id}
 			};
 			this.props.createCardScore(card_score);
 		}
+	}
+
+	updateCurrentCardScore(score){
+		let currentCard = this.currentCard();
+		let card_score = {card_score: {score: score}}
+		this.props.updateCardScore(card_score, currentCard.card_score[0].id);
 	}
 
 	componentDidMount(){
@@ -61,6 +67,13 @@ class StudyCard extends React.Component {
 
   render(){
     let currentCard = this.currentCard();
+		let currentCardScore;
+		if (currentCard.card_score){
+			currentCardScore = currentCard.card_score[0].score;
+		} else {
+			currentCardScore = {};
+		}
+
     return(
       <section className="study-card-container">
         <div className={this.state.flipped ? "flip-container-flipped" : "flip-container"}>
@@ -88,16 +101,20 @@ class StudyCard extends React.Component {
         </button>
 				<section className="card-scores">
 					<ul>
-						<li>
+						<li onClick={this.updateCurrentCardScore.bind(this, 0)}
+							className={currentCardScore === 0 ? "current-score": ""}>
 							0
 						</li>
-						<li>
+						<li onClick={this.updateCurrentCardScore.bind(this, 1)}
+							className={currentCardScore === 1 ? "current-score": ""}>
 							1
 						</li>
-						<li>
+						<li onClick={this.updateCurrentCardScore.bind(this, 2)}
+							className={currentCardScore === 2 ? "current-score": ""}>
 							2
 						</li>
-						<li>
+						<li onClick={this.updateCurrentCardScore.bind(this, 3)}
+							className={currentCardScore === 3 ? "current-score": ""}>
 							3
 						</li>
 					</ul>
