@@ -16,7 +16,7 @@ const CardReducer = (state = {byId: {}, allIds: []}, action) => {
       let newCard = merge({}, action.card);
       newCard.card_score = newCard.card_score.filter(cardScore => (
         cardScore.user_id === window.currentUser.id
-      ));
+      ))[0];
       newState.byId[action.card.id] = newCard;
       return newState;
     case RECEIVE_CARDS:
@@ -26,7 +26,7 @@ const CardReducer = (state = {byId: {}, allIds: []}, action) => {
         let card = byId[key];
         card.card_score = card.card_score.filter(cardScore => (
           cardScore.user_id === window.currentUser.id
-        ));
+        ))[0];
       });
       return {byId, allIds};
     case REMOVE_CARD:

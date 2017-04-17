@@ -1,3 +1,33 @@
+.study-card-container {
+  position: relative;
+  overflow: hidden;
+  width: 320px;
+}
+
 .current-score {
   color: $white;
+}
+
+.current-card {
+  // transform: translate3d(0, 0, 0);
+}
+
+.hidden-card {
+  display: none;
+}
+
+.hidden-card-prev{
+  z-index: 1;
+  transition: all .9s ease;
+  position: absolute;
+  top: 0;
+  transform: translateX(110%);
+}
+
+.hidden-card-next{
+  z-index: 1;
+  transition: all .9s ease;
+  position: absolute;
+  top: 0;
+  transform: translateX(-110%);
 }

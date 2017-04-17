@@ -5,11 +5,6 @@
 	perspective: 1000px;
 }
 
-	/* flip the pane when hovered */
-	// .flip-container:hover .flipper, .flip-container.hover .flipper {
-	// 	transform: rotateY(180deg);
-	// }
-
   .flip-container-flipped .flipper {
 		transform: rotateY(180deg);
 	}
@@ -34,6 +29,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+	border: 3px solid $black;
 }
 
 /* front pane, placed above back */
