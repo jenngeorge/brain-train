@@ -6,4 +6,9 @@ class User < ApplicationRecord
 
   has_many :subjects
   has_many :decks
+
+  has_many :subject_follows
+  has_many :followed_subjects,
+    through: :subject_follows,
+    source: :subject
 end

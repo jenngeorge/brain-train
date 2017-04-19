@@ -5,4 +5,9 @@ class Subject < ApplicationRecord
 
   has_many :decks, dependent: :destroy
 
+  has_many :subject_follows
+  has_many :following_users,
+    through: :subject_follows,
+    source: :user
+
 end

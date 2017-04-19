@@ -132,3 +132,9 @@ landmark_studies = Deck.create!(
   title: "Landmark Studies",
   subject_id: cognitive_biases.id
 )
+
+# users following subjects
+SubjectFollow.create!(user_id: guest.id, subject_id: javascript.id)
+SubjectFollow.create!(user_id: guest.id, subject_id: perception_science.id)
+SubjectFollow.create!(user_id: guest.id, subject_id: octopus_facts.id)
+SubjectFollow.create!(user_id: guest.id, subject_id: neuroscience.id)

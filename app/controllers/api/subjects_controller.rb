@@ -30,7 +30,13 @@ class Api::SubjectsController < ApplicationController
   end
 
   def index
-    @subjects = Subject.includes(:decks)
+    if params[:search]
+      @subjects = Subject.includes(:decks)
+        .where("title LIKE ?", params[:search][:filter])
+    else
+      @subjects = current_user.followed_subjects.includes(:decks)
+    end
+
     render :index
   end
 
