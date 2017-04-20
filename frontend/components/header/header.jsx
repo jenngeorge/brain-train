@@ -82,6 +82,11 @@ class Header extends React.Component{
               Library
             </Link>
           </span>
+          <span className="header-links button">
+            <Link to="/search">
+              Subjects
+            </Link>
+          </span>
           {sessionButtons()}
 
             <Modal

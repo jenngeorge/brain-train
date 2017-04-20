@@ -31,8 +31,12 @@ class Api::SubjectsController < ApplicationController
 
   def index
     if params[:search]
+      match = params[:search].downcase
       @subjects = Subject.includes(:decks)
-        .where("title LIKE ?", params[:search][:filter])
+        .where("LOWER(title) LIKE ?
+        OR LOWER(title) LIKE ?
+        OR LOWER(title) LIKE ?",
+        "%#{match}%", "#{match}%", "%#{match}")
     else
       @subjects = current_user.followed_subjects.includes(:decks)
     end

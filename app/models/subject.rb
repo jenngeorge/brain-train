@@ -9,5 +9,4 @@ class Subject < ApplicationRecord
   has_many :following_users,
     through: :subject_follows,
     source: :user
-
 end

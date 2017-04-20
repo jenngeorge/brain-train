@@ -29,8 +29,8 @@ export const fetchSubject = subjectId => dispatch => (
       err => dispatch(receiveErrors(err.resposneJSON)))
 );
 
-export const fetchSubjects = () => dispatch => (
-  APIUtil.fetchSubjects()
+export const fetchSubjects = search => dispatch => (
+  APIUtil.fetchSubjects(search)
     .then(subjects => dispatch(receiveSubjects(subjects)),
       err => dispatch(receiveErrors(err.responseJSON)))
 );

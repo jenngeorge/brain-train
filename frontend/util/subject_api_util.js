@@ -28,9 +28,10 @@ export const fetchSubject = (id) => {
   });
 };
 
-export const fetchSubjects = () => {
+export const fetchSubjects = search => {
   return $.ajax({
     method: "get",
-    url: "/api/subjects"
+    url: "/api/subjects",
+    data: search
   });
 };
