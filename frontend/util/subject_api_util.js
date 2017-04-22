@@ -35,3 +35,19 @@ export const fetchSubjects = search => {
     data: search
   });
 };
+
+// subject follows
+export const createSubjectFollow = (id) => {
+  return $.ajax({
+    method: 'post',
+    url: '/api/subject_follows',
+    data: {subject_follow: {subject_id: id}}
+  });
+};
+
+export const deleteSubjectFollow = (id) => {
+  return $.ajax({
+    method: "delete",
+    url: `/api/subject_follows/${id}`
+  });
+};

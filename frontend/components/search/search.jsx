@@ -17,7 +17,9 @@ class Search extends React.Component{
           fetchSubjects={this.props.fetchSubjects}/>
         < SearchIndex
           subjects={this.props.subjects}
-          currentUser={this.props.currentUser} />
+          currentUser={this.props.currentUser}
+          followSubject={this.props.createSubjectFollow}
+          unfollowSubject={this.props.deleteSubjectFollow}/>
       </div>
     );
 

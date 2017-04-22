@@ -9,8 +9,11 @@ const SearchIndex = (props) => {
       <li key={key}>
         < SearchIndexItem
           subject={subject}
+          subjectId={key}
           followSubject={props.followSubject}
-          currentUser={props.currentUser}/>
+          currentUser={props.currentUser}
+          followSubject={props.followSubject}
+          unfollowSubject={props.unfollowSubject}/>
       </li>
     );
   });

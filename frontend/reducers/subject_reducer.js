@@ -9,7 +9,9 @@ const SubjectReducer = (state = {byId: {}, allIds:[]}, action) => {
   let newState = merge({}, state);
   switch(action.type) {
     case RECEIVE_SUBJECT:
-      newState.allIds.push(action.subject.id);
+      if (!newState.byId[action.subject.id]){
+        newState.allIds.push(action.subject.id);
+      }
       newState.byId[action.subject.id] = subjectHelper(action.subject);
       return newState;
     case RECEIVE_SUBJECTS:
@@ -20,7 +22,6 @@ const SubjectReducer = (state = {byId: {}, allIds:[]}, action) => {
       let byId = action.subjects;
       return {byId, allIds};
     case REMOVE_SUBJECT:
-
       newState.byId = omit(newState.byId, action.subjectId);
       let idx = newState.allIds.indexOf(action.subjectId);
       newState.allIds.splice(idx, 1);

@@ -35,8 +35,9 @@ class SubjectForm extends React.Component {
 
 			this.props.createSubject({subject}).then(
 				(createdSubject)=> {
-					that.setState({changedId: createdSubject.id});
-					that.props.receiveSubject(createdSubject);
+					that.setState({changedId: createdSubject.id}, ()=> {
+						that.props.receiveSubject(createdSubject);
+					});
 				},
 				(err) => that.props.receiveErrors(err.responseJSON)
 			);

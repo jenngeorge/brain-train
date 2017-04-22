@@ -3,6 +3,7 @@ class Api::SubjectsController < ApplicationController
   def create
     @subject = Subject.new(subject_params)
     if @subject.save
+      SubjectFollow.create!(subject_id: @subject.id, user_id: current_user.id)
       render :show
     else
       render json: @subject.errors.full_messages, status: 422
@@ -10,7 +11,7 @@ class Api::SubjectsController < ApplicationController
   end
 
   def update
-    @subject = Subject.find(params[:id])
+    @subject = Subject.includes(:subject_follows).find(params[:id])
     if @subject.update_attributes(subject_params)
       render :show
     else
@@ -26,19 +27,19 @@ class Api::SubjectsController < ApplicationController
   end
 
   def show
-    @subject = Subject.includes(:decks).find(params[:id])
+    @subject = Subject.includes(:decks, :subject_follows).find(params[:id])
   end
 
   def index
     if params[:search]
       match = params[:search].downcase
-      @subjects = Subject.includes(:decks)
+      @subjects = Subject.includes(:decks, :subject_follows)
         .where("LOWER(title) LIKE ?
         OR LOWER(title) LIKE ?
         OR LOWER(title) LIKE ?",
         "%#{match}%", "#{match}%", "%#{match}")
     else
-      @subjects = current_user.followed_subjects.includes(:decks)
+      @subjects = current_user.followed_subjects.includes(:decks, :subject_follows)
     end
 
     render :index

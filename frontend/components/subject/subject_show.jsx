@@ -1,5 +1,5 @@
 import React from 'react';
-import {withRouter, Link} from 'react-router-dom';
+import {withRouter, Link, Redirect} from 'react-router-dom';
 import SubjectFormContainer from './subject_form_container';
 import DeckIndexContainer from '../deck/deck_index_container';
 import DeckFormContainer from '../deck/deck_form_container';
@@ -9,13 +9,15 @@ class SubjectShow extends React.Component {
 		super(props);
     this.state= {
       subjectFormOpen: false,
-			deckFormOpen: false
+			deckFormOpen: false,
+			redirect: false
     };
 
     this.fetchSubject = this.fetchSubject.bind(this);
     this.subjectForm = this.subjectForm.bind(this);
     this.toggleSubjectForm = this.toggleSubjectForm.bind(this);
 		this.toggleDeckForm = this.toggleDeckForm.bind(this);
+		this.unfollowSubject = this.unfollowSubject.bind(this);
   }
 
   componentWillMount(){
@@ -34,6 +36,11 @@ class SubjectShow extends React.Component {
     this.props.fetchSubject(id)
       .then(subject => this.props.receiveSubject(subject));
   }
+
+	unfollowSubject(){
+		this.props.deleteSubjectFollow(this.props.subjectId)
+			.then(this.setState({redirect: true}));
+	}
 
   subjectForm(){
     if (this.state.subjectFormOpen){
@@ -67,10 +74,17 @@ class SubjectShow extends React.Component {
 	}
 
 	render() {
+		if (this.state.redirect) {
+			return <Redirect to="/library" />;
+		}
+
     let subject = this.props.subject || {};
     return(
       <section className="subject-show-container">
         {subject.title}
+				<button onClick={this.unfollowSubject}>
+					Unfollow
+				</button>
         <button onClick={this.toggleSubjectForm}>Edit</button>
         {this.subjectForm()}
 

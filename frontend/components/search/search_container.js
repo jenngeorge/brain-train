@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
-import { fetchSubjects } from '../../actions/subject_actions';
+import { fetchSubjects,
+        createSubjectFollow,
+        deleteSubjectFollow } from '../../actions/subject_actions';
 
 import Search from './search.jsx';
 
@@ -10,7 +12,9 @@ const mapStateToProps = (state, props) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchSubjects: search => dispatch(fetchSubjects(search))
+  fetchSubjects: search => dispatch(fetchSubjects(search)),
+  createSubjectFollow: subjectId => dispatch(createSubjectFollow(subjectId)),
+  deleteSubjectFollow: subjectId => dispatch(deleteSubjectFollow(subjectId))
 });
 
 export default connect(

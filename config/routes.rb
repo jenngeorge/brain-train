@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :decks
     resources :cards
     resources :card_scores, only: [:create, :update]
+    resources :subject_follows, only: [:create, :destroy]
   end
 
   get '*path', to: 'static_pages#root'
