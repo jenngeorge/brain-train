@@ -12,5 +12,6 @@
 - because I'm handling redirecting in React components with react-router 4's `Redirect` and avoiding fetching extra / repeated info from the db, my React forms need to know the id of the item they just created. Thus, I move api requests like `createSubject` into the React form instead of burying them in an action. Before dispatching the `receiveSubject` action that hits my reducer and updates the state to include the new subject, I grab the newly created object's id and stick it in the form's internal state. This allows me to use Redirect in the form's render function to redirect to the new object's show view.
 
 
-## Look & Feel 
-http://event.larepenger.no/en/en/
+## Look & Feel
+
+http://mcg.mbitson.com/#!?mcgpalette0=%231693a5&mcgpalette1=%23ffb900&mcgpalette2=%23e85205&mcgpalette3=%233a5654&themename=study

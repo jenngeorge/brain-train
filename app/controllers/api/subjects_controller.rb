@@ -39,7 +39,12 @@ class Api::SubjectsController < ApplicationController
         OR LOWER(title) LIKE ?",
         "%#{match}%", "#{match}%", "%#{match}")
     else
-      @subjects = current_user.followed_subjects.includes(:decks, :subject_follows)
+      if current_user.followed_subjects
+        @subjects = current_user.followed_subjects.includes(:decks, :subject_follows)
+      else
+        @subjects = Subject.first
+        # TODO: make this better ^ what if a user follows no subjects
+      end
     end
 
     render :index
