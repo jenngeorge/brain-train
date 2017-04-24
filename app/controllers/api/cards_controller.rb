@@ -26,13 +26,14 @@ class Api::CardsController < ApplicationController
       render :show
     end
 
-    def shoß
+    def show
       @card = Card.includes(:card_scores).find(params[:id])
     end
 
     def index
       if params[:deckId]
         @cards = Card.includes(:card_scores).where(deck_id: params[:deckId])
+        @cards
       else
         @cards = Card.includes(:card_scores).all
       end

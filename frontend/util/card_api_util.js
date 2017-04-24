@@ -32,7 +32,7 @@ export const fetchCards = (id) => {
   return $.ajax({
     method: "get",
     url: "/api/cards",
-    data: {subjectId: id}
+    data: {deckId: id}
   });
 };
 
