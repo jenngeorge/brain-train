@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, withRouter, Redirect } from 'react-router-dom';
 
 class SessionForm extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { email: "", password: "" };
+		this.state = { email: "", password: "", redirect: false };
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.switchFormLink = this.switchFormLink.bind(this);
 	}
@@ -23,11 +23,12 @@ class SessionForm extends React.Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
-		const user = this.state;
+		const user = {email: this.state.email, password: this.state.password};
 		if (this.props.formType === "signup"){
 			this.props.signup({user}).then(()=> {
 				if (this.props.currentUser){
 					window.currentUser = this.props.currentUser;
+					this.setState({redirect: true});
 					this.props.closeModal();
 				}
 			});
@@ -35,6 +36,7 @@ class SessionForm extends React.Component {
 			this.props.signin({user}).then(()=> {
 				if (this.props.currentUser){
 					window.currentUser = this.props.currentUser;
+					this.setState({redirect: true});
 					this.props.closeModal();
 				}
 			});
@@ -63,6 +65,9 @@ class SessionForm extends React.Component {
 	}
 
 	render() {
+		if (this.state.redirect){
+			return (<Redirect to="/"/>);
+		}
 		return (
 			<div className="signin-form-container">
 				<i className="modal-close fa fa-times"

@@ -1,16 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, withRouter } from 'react-router-dom';
 
-class LibrarySidebar extends React.Component{
-  constructor(){
-    super();
+class StudySidebar extends React.Component{
+  constructor(props){
+    super(props);
 
   }
   render(){
     return(
       <section className="sidebar-container">
-        <Link to="/library">Library</Link>
-        <div>Deck Title</div>
+        <h1>{this.props.deck ? this.props.deck.title : ""}</h1>
+        <div>
+          scores will go here
+        </div>
 
       </section>
     );
@@ -18,4 +20,4 @@ class LibrarySidebar extends React.Component{
 }
 
 
-export default withRouter(LibrarySidebar);
+export default withRouter(StudySidebar);

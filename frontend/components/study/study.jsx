@@ -20,7 +20,7 @@ class Study extends React.Component{
     return (
       <div className="study-container">
         <StudySidebar
-          deck={this.props.deck || {}}/>
+          deck={this.props.deck}/>
         <StudyCard
           cards={this.props.cards || {}}
           updateCardScore={this.props.updateCardScore}

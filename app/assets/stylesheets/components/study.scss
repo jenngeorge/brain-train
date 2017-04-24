@@ -34,13 +34,13 @@
     width: 25%;
     height: 100px;
     margin: 2px;
-    background-color: $secondary-color;
+    background-color: $primary-color;
     display: flex;
     align-items: center;
     justify-content: center;
 
     &:hover {
-      background-color: darken($secondary-color, 20%)
+      background-color: darken($primary-color, 10%)
     }
 
     h1 {
@@ -50,5 +50,5 @@
 }
 
 li.current-score {
-  background-color: $primary-color;
+  background-color: $secondary-color;
 }
