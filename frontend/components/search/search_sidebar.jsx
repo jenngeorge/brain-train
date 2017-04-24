@@ -26,7 +26,7 @@ class SearchSidebar extends React.Component{
   render(){
     return(
       <section className="sidebar-container">
-        <h2>Search Subjects</h2>
+        <h1>Search Subjects</h1>
         <form onSubmit={this.handleSubmit}>
           <input type="text"
             value={this.state.filter}

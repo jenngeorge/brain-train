@@ -1,11 +1,12 @@
 .sidebar-container {
-  width: 300px;
+  width: 350px;
   height: 100vh;
   background-color: $primary-color;
   padding: 40px;
+  padding-top: 80px;
 
   h1{
-    color: $secondary-color;
+    color: $white;
     font-size: 2em;
     margin-bottom: 20px;
   }

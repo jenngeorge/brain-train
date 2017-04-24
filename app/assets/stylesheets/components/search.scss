@@ -1,0 +1,18 @@
+.search-index {
+  width: 60%;
+  margin: 0 auto;
+  padding-top: $padding-container * 2;
+  max-height: 100vh;
+  overflow: scroll;
+}
+
+.search-index-item {
+  padding: $margin-basic;
+  margin: $margin-basic;
+  background-color: $white;
+  border-radius: 5px;
+}
+
+.search-container h1 {
+  color: $white;
+}

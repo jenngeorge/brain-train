@@ -105,14 +105,14 @@ class StudyCard extends React.Component {
 					<div className={this.state.flipped ? "flip-container-flipped" : "flip-container"}>
 	          <div className="flipper">
 	            <div className="front">
-	              <h2>
+	              <h5>
 	                {card.question}
-	              </h2>
+	              </h5>
 	            </div>
 	            <div className="back">
-	              <h2>
+	              <h5>
 	                {card.answer}
-	              </h2>
+	              </h5>
 	            </div>
 	          </div>
 	        </div>
@@ -127,33 +127,43 @@ class StudyCard extends React.Component {
 					{cardLis}
 				</ul>
 
-        <button onClick={this.flipCard}>
-          {this.state.flipped ? "See Question" : "See Answer"}
-        </button>
-        <button onClick={this.nextCard}>
-          Next Card
-        </button>
-        <button onClick={this.prevCard}>
-          Prev Card
-        </button>
+				<section className="study-buttons">
+					<button onClick={this.prevCard}>
+						Prev Card
+					</button>
+					<button onClick={this.flipCard}>
+						{this.state.flipped ? "See Question" : "See Answer"}
+					</button>
+					<button onClick={this.nextCard}>
+						Next Card
+					</button>
+				</section>
 
 				<section className="card-scores">
 					<ul>
 						<li onClick={this.updateCurrentCardScore.bind(this, 0)}
 							className={currentCardScore === 0 ? "current-score": ""}>
-							0
+							<h1>
+								0
+							</h1>
 						</li>
 						<li onClick={this.updateCurrentCardScore.bind(this, 1)}
 							className={currentCardScore === 1 ? "current-score": ""}>
-							1
+							<h1>
+								1
+							</h1>
 						</li>
 						<li onClick={this.updateCurrentCardScore.bind(this, 2)}
 							className={currentCardScore === 2 ? "current-score": ""}>
-							2
+							<h1>
+								2
+							</h1>
 						</li>
 						<li onClick={this.updateCurrentCardScore.bind(this, 3)}
 							className={currentCardScore === 3 ? "current-score": ""}>
-							3
+							<h1>
+								3
+							</h1>
 						</li>
 					</ul>
 				</section>

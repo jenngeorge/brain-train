@@ -27,12 +27,14 @@ class SessionForm extends React.Component {
 		if (this.props.formType === "signup"){
 			this.props.signup({user}).then(()=> {
 				if (this.props.currentUser){
+					window.currentUser = this.props.currentUser;
 					this.props.closeModal();
 				}
 			});
 		} else {
 			this.props.signin({user}).then(()=> {
 				if (this.props.currentUser){
+					window.currentUser = this.props.currentUser;
 					this.props.closeModal();
 				}
 			});

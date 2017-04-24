@@ -31,7 +31,6 @@ class LibrarySidebar extends React.Component{
     return(
       <section className="sidebar-container">
         <h1>Subjects</h1>
-        <div>subject searchbar</div>
         <button onClick={this.toggleSubjectForm}>
           add subject
         </button>

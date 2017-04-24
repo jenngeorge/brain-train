@@ -6,7 +6,7 @@ const SearchIndex = (props) => {
   let subjectLis = Object.keys(props.subjects).map(key => {
     let subject = props.subjects[key];
     return (
-      <li key={key}>
+      <li key={key} className="search-index-item">
         < SearchIndexItem
           subject={subject}
           subjectId={key}

@@ -1,5 +1,9 @@
 .header-container{
   padding: 0 20px;
+  background-color: $primary-color;
+  position: fixed;
+  width: 100%;
+  border-bottom: 3px solid $secondary-color;
 }
 
 .signin-buttons, .signout-button{

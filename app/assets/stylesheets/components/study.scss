@@ -1,0 +1,54 @@
+.study-card-container {
+  padding: $padding-container;
+  padding-top: $padding-container*3;
+  margin: 0 auto;
+
+  ul {
+    position: relative;
+    width: 600px;
+    overflow: hidden;
+  }
+}
+
+.card-scores {
+  display: block;
+}
+
+
+
+
+.study-buttons {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-scores {
+  margin-top: $padding-container;
+
+  ul {
+    display: flex;
+  }
+
+  li {
+    width: 25%;
+    height: 100px;
+    margin: 2px;
+    background-color: $secondary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: darken($secondary-color, 20%)
+    }
+
+    h1 {
+      font-size: 2em;
+    }
+  }
+}
+
+li.current-score {
+  background-color: $primary-color;
+}

@@ -10,8 +10,8 @@
 	}
 
 .flip-container, .flip-container-flipped, .front, .back {
-	width: 320px;
-	height: 480px;
+	width: 600px;
+	height: 350px;
 }
 
 /* flip speed goes here */
@@ -29,7 +29,12 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	border: 3px solid $black;
+	padding: $margin-basic;
+	border: 3px solid $darker-background;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 /* front pane, placed above back */
