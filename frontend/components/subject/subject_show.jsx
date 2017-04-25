@@ -68,7 +68,8 @@ class SubjectShow extends React.Component {
 				formType="create"
 				deck={{}}
 				toggleDeckForm={this.toggleDeckForm}
-				subjectId={this.props.subjectId}/>
+				subjectId={this.props.subjectId}
+				currentUserId={this.props.currentUser.id}/>
 			);
 		}
 	}
@@ -79,17 +80,24 @@ class SubjectShow extends React.Component {
 		}
 
     let subject = this.props.subject || {};
+		let subjectButtons;
+		if (subject.user_id === this.props.currentUser.id){
+			subjectButtons = (
+				<section className="subject-buttons">
+					<button onClick={this.toggleSubjectForm}>Edit</button>
+					{this.subjectForm()}
+
+					<button onClick={this.toggleDeckForm}>New Deck</button>
+					{this.deckForm()}
+				</section>);
+		}
     return(
       <section className="subject-show-container">
         {subject.title}
 				<button onClick={this.unfollowSubject}>
 					Unfollow
 				</button>
-        <button onClick={this.toggleSubjectForm}>Edit</button>
-        {this.subjectForm()}
-
-				<button onClick={this.toggleDeckForm}>New Deck</button>
-				{this.deckForm()}
+				{subjectButtons}
 
 				<DeckIndexContainer
 					subject={this.props.subject}

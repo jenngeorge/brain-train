@@ -14,15 +14,21 @@ class DeckIndexItem extends React.Component{
 
 
   render(){
+    let editDeck;
+    if (this.props.currentUserId === this.props.deck.user_id){
+      editDeck = (
+        <Link to={`/edit/${this.props.deck.id}`}>
+          Edit Deck
+        </Link>
+      );
+    }
 
     return(
       <div className="deck-index-item">
         <h2 onClick={this.handleStudyClick}>
           {this.props.deck.title}
         </h2>
-        <Link to={`/edit/${this.props.deck.id}`}>
-          Edit Deck
-        </Link>
+        {editDeck}
       </div>
     );
 

@@ -66,11 +66,15 @@ class DeckForm extends React.Component {
 	}
 
 	render() {
-    let dropdownSubjectOptions = Object.keys(this.props.subjects).map(key => (
-      <option key={key} value={key} >
-        {this.props.subjects[key].title}
-      </option>
-    ));
+    let dropdownSubjectOptions = Object.keys(this.props.subjects).map(key => {
+			if (this.props.subjects[key].user_id === this.props.currentUserId){
+				return (
+					<option key={key} value={key} >
+						{this.props.subjects[key].title}
+					</option>
+				);
+			}
+		});
 
 		let deleteButton;
 		if (this.props.formType === "update"){
@@ -92,7 +96,7 @@ class DeckForm extends React.Component {
 							className="deck-input" />
 					</label>
           <label> Subject:
-						<select onChange={this.update("subject_id")} value={this.state.subjectId}>
+						<select onChange={this.update("subject_id")} value={this.state.subject_id}>
               {dropdownSubjectOptions}
 						</select>
 					</label>

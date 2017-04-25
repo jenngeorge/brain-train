@@ -11,7 +11,9 @@ const DeckIndex = (props) => {
       if (props.decks[key]){
         return (
           <li key={key}>
-            <DeckIndexItem deck={props.decks[key]} />
+            <DeckIndexItem
+              deck={props.decks[key]}
+              currentUserId={props.currentUserId} />
           </li>
         );
       }

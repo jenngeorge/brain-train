@@ -6,7 +6,8 @@ import SubjectShow from './subject_show';
 
 const mapStateToProps = (state, props) => ({
   subject: state.subjects.byId[props.match.params.subjectId],
-  subjectId: props.match.params.subjectId
+  subjectId: props.match.params.subjectId,
+  currentUser: state.session.currentUser
 });
 
 
