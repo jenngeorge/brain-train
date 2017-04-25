@@ -4,7 +4,10 @@ import { Link, withRouter, Redirect } from 'react-router-dom';
 class SessionForm extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { email: "", password: "", redirect: false };
+		this.state = {
+			email: "guest@email.com",
+			password: "password",
+			redirect: false };
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.switchFormLink = this.switchFormLink.bind(this);
 	}
@@ -75,7 +78,9 @@ class SessionForm extends React.Component {
 					onClick={this.props.closeModal} />
 				<form onSubmit={this.handleSubmit} className="signin-form-box">
 					<br/>
-					Please {this.props.formType} or {this.switchFormLink()}
+					<h3>
+						Please {this.props.formType} or {this.switchFormLink()}
+					</h3>
 					{this.renderErrors()}
 					<div className="signin-form">
 						<br/>

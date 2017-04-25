@@ -18,6 +18,17 @@ class Header extends React.Component{
       formType: ""
     };
 
+    this.modalStyle = {
+      overlay: {},
+      content: {
+        width: "450px",
+        height: "400px",
+        position: "relative",
+        margin: "0 auto",
+        borderRadius: "10px"
+      }
+    };
+
     this.closeModal = this.closeModal.bind(this);
     this.openModal = this.openModal.bind(this);
     this.switchForm = this.switchForm.bind(this);
@@ -92,7 +103,8 @@ class Header extends React.Component{
             <Modal
             isOpen={this.state.modalOpen}
             onRequestClose={this.closeModal}
-            contentLabel="Modal">
+            contentLabel="Modal"
+            style={this.modalStyle}>
               <SessionForm
                 formType={this.state.formType}
                 signout={this.props.signout}
