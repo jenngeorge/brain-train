@@ -2,3 +2,51 @@
   padding: $padding-container;
   padding-top: $padding-container *2;
 }
+
+.library-container .sidebar-container {
+  padding: 0px;
+  padding-top: 80px;
+
+  h1 {
+    margin: $margin-basic;
+    margin-left: 40px;
+  }
+
+  .new-subject {
+    margin-left: 40px;
+  }
+
+  .subject-index {
+    max-height: 60vh;
+    overflow: scroll;
+
+    li {
+      color: $white;
+      padding: 10px 20px 10px 40px;
+
+      &:hover {
+        background-color: $light-primary-color;
+      }
+    }
+  }
+}
+
+.subject-form-container {
+  form {
+    margin: 10px 20px 10px 40px;
+    label {
+      color: $white;
+    }
+
+    .form-buttons{
+      text-align: right;
+    }
+
+    input[type="text"]{
+      background-color: $light-primary-color;
+      margin-left: 10px;
+      margin-right: 0;
+      width: 150px;
+    }
+  }
+}

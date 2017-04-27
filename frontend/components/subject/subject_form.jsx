@@ -85,6 +85,7 @@ class SubjectForm extends React.Component {
 	render() {
 		let changedId = this.state.changedId;
 		if (changedId && this.props.subjects[changedId]){
+			this.props.toggleSubjectForm();
 			return(
 				<Redirect to={`/library/${changedId}`} />
 			);
@@ -109,7 +110,6 @@ class SubjectForm extends React.Component {
 								className="subject-input" />
 						</label>
 						<button><input type="submit" value="Submit" /></button>
-						<button onClick={this.props.toggleSubjectForm}>cancel</button>
 					</form>
 					{deleteButton}
 				</div>

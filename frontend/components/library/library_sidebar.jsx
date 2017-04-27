@@ -28,12 +28,13 @@ class LibrarySidebar extends React.Component{
   }
 
   render(){
+
     return(
       <section className="sidebar-container">
         <h1>Subjects</h1>
-        <button onClick={this.toggleSubjectForm}>
-          add subject
-        </button>
+          <button onClick={this.toggleSubjectForm} className="new-subject">
+            {this.state.formOpen ? "Cancel" : "Add Subject"}
+          </button>
         {this.subjectForm()}
 
         <SubjectIndexContainer />

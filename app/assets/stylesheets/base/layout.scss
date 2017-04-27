@@ -25,9 +25,6 @@ h1, h2, h3 {
 }
 
 input[type="text"] {
-  background-color: lighten($primary-color, 20%);
   height: 40px;
   padding: 5px;
-  margin: 5px;
-  width: 150px;
 }

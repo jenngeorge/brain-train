@@ -9,11 +9,11 @@ class SubjectIndex extends React.Component{
 
   render(){
     let subjectLis = Object.keys(this.props.subjects).map(key => (
-      <li key={key}>
-       <Link to={`/library/${key}`}>
-         {this.props.subjects[key].title}
-       </Link>
-      </li>
+      <Link to={`/library/${key}`} key={key}>
+        <li >
+           {this.props.subjects[key].title}
+        </li>
+      </Link>
     ));
 
     return(
