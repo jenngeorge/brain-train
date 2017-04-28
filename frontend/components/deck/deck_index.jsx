@@ -10,7 +10,7 @@ const DeckIndex = (props) => {
     deckLis = props.subject.deckIds.map(key => {
       if (props.decks[key]){
         return (
-          <li key={key}>
+          <li key={key} className="deck-index-item">
             <DeckIndexItem
               deck={props.decks[key]}
               currentUserId={props.currentUserId} />

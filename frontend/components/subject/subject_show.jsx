@@ -84,7 +84,9 @@ class SubjectShow extends React.Component {
 		if (subject.user_id === this.props.currentUser.id){
 			subjectButtons = (
 				<section className="subject-buttons">
-					<button onClick={this.toggleSubjectForm}>Edit</button>
+					<button onClick={this.toggleSubjectForm} >
+						Edit
+					</button>
 					{this.subjectForm()}
 
 					<button onClick={this.toggleDeckForm}>New Deck</button>
@@ -93,8 +95,8 @@ class SubjectShow extends React.Component {
 		}
     return(
       <section className="subject-show-container">
-        {subject.title}
-				<button onClick={this.unfollowSubject}>
+        <h1>{subject.title}</h1>
+				<button onClick={this.unfollowSubject} className="subject-button">
 					Unfollow
 				</button>
 				{subjectButtons}

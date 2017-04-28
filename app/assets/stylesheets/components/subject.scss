@@ -1,6 +1,14 @@
 .subject-show-container {
   padding: $padding-container;
   padding-top: $padding-container *2;
+  width: 60%;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 2em;
+    display: inline;
+  }
+
 }
 
 .library-container .sidebar-container {
@@ -50,4 +58,31 @@
       width: 150px;
     }
   }
+}
+
+.deck-index-item {
+  padding: $margin-basic;
+  margin: $margin-basic 0;
+  background-color: $white;
+  border-radius: 5px;
+  display: block;
+
+  h2 {
+    display: inline;
+  }
+
+  .edit-deck {
+    float: right;
+  }
+}
+
+.subject-button {
+  position: relative;
+  top: -5px;
+  margin: 0 20px;
+  display: inline-block;
+}
+
+.subject-buttons button {
+  margin-left: 0px;
 }
