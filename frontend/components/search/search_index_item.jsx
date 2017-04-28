@@ -47,17 +47,17 @@ class SearchIndexItem extends React.Component {
 
     const deckPreviews = this.props.subject.deckIds.map(id => (
       <li key={id}>
-        {this.props.decks[id].title}
+        {this.props.decks[id] ? this.props.decks[id].title : ""}
       </li>
     ));
 
     return(
       <div>
-        <h2>{this.props.subject.title}</h2>
+        <h2>{this.props.subject ? this.props.subject.title : ""}</h2>
         {this.followButton()}
-        <div onClick={this.toggleOpen}>toggle details</div>
+        <div className="toggle-details" onClick={this.toggleOpen}>toggle details</div>
         <section className={this.state.open ? "show-details" : "hide-details"}>
-          <h3>Decks</h3>
+          <h3>{this.props.subject.deckIds.length === 0 ? "No decks yet" : "Decks"}</h3>
           {deckPreviews}
         </section>
       </div>
