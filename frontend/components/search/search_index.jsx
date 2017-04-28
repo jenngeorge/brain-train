@@ -13,7 +13,8 @@ const SearchIndex = (props) => {
           followSubject={props.followSubject}
           currentUser={props.currentUser}
           followSubject={props.followSubject}
-          unfollowSubject={props.unfollowSubject}/>
+          unfollowSubject={props.unfollowSubject}
+          decks={props.decks}/>
       </li>
     );
   });

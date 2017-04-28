@@ -27,7 +27,7 @@ class SearchSidebar extends React.Component{
     return(
       <section className="sidebar-container">
         <h1>Search Subjects</h1>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="search-form">
           <input type="text"
             value={this.state.filter}
             onChange={this.update("filter")}/>

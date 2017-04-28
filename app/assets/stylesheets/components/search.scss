@@ -11,8 +11,31 @@
   margin: $margin-basic;
   background-color: $white;
   border-radius: 5px;
+
+  h2 {
+    display: inline;
+  }
+
+  button {
+    float: right;
+    margin-top: 5px;
+  }
 }
 
 .search-container h1 {
   color: $white;
+}
+
+.search-form {
+  input[type="text"]{
+    background-color: $light-primary-color;
+  }
+}
+
+.show-details {
+  display: block;
+}
+
+.hide-details {
+  display: none;
 }
