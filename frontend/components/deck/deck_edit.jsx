@@ -32,11 +32,8 @@ class DeckEdit extends React.Component{
   }
 
   componentDidMount(){
-    if (!this.props.deck ){
-      this.props.fetchDeck(this.props.deckId);
-      this.props.fetchCards(this.props.deckId);
-    }
-
+    this.props.fetchDeck(this.props.deckId);
+    this.props.fetchCards(this.props.deckId);
   }
 
   deckForm(){
