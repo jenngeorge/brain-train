@@ -4,6 +4,7 @@
   position: fixed;
   width: 100%;
   border-bottom: 3px solid $secondary-color;
+  z-index: 1000;
 }
 
 .signin-buttons, .signout-button{

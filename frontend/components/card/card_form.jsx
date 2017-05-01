@@ -77,24 +77,36 @@ class CardForm extends React.Component {
 
 		return (
 			<div className="card-form-container">
-				<form onSubmit={this.handleSubmit}>
+				<form onSubmit={this.handleSubmit} className="card-index-item">
 					{this.renderErrors()}
-					<label> Question:
-						<input type="text"
-							value={this.state.question}
-							onChange={this.update("question")}
-							className="card-input" />
-					</label>
-					<label> Answer:
-						<input type="text"
-							value={this.state.answer}
-							onChange={this.update("answer")}
-							className="card-input" />
-					</label>
-					<button><input type="submit" value="Submit" /></button>
-					<button onClick={this.props.toggleCardForm}>cancel</button>
+					<div className="card-question">
+						<label>
+							<h5>
+								Question:
+							</h5>
+							<input type="text"
+								value={this.state.question}
+								onChange={this.update("question")}
+								className="card-input" />
+						</label>
+					</div>
+					<div className="card-answer">
+						<label>
+							<h5>
+								Answer:
+							</h5>
+							<textarea rows="5" wrap="hard"
+								value={this.state.answer}
+								onChange={this.update("answer")}
+								className="card-input" />
+						</label>
+					</div>
+					<div className="card-form-buttons">
+						<button><input type="submit" value="Submit" /></button>
+						<button onClick={this.props.toggleCardForm}>Cancel</button>
+						{deleteButton}
+					</div>
 				</form>
-				{deleteButton}
 			</div>
 		);
 

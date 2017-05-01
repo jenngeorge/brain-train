@@ -34,14 +34,14 @@ class CardIndexItem extends React.Component{
     } else {
       return(
         <div className="card-index-item">
-          <h2>
-            Question:
-            {this.props.card.question}
-          </h2>
-          <h2>
-            Answer:
+          <div className="card-question">
+              <h5>Question:</h5>
+              {this.props.card.question}
+          </div>
+          <div className="card-answer">
+            <h5>Answer:</h5>
             {this.props.card.answer}
-          </h2>
+          </div>
           <button onClick={this.toggleCardForm}>
             Edit Card
           </button>

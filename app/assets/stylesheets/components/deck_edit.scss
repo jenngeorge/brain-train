@@ -1,5 +1,64 @@
 .deck-edit {
   padding: $padding-container;
   padding-top: $padding-container*3;
+  width: 80%;
+  margin: 0 auto;
 
+  h1 {
+    font-size: 2em;
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+    top: 7px;
+
+  }
+
+}
+
+.card-index-item {
+  padding: $margin-basic;
+  margin-top: $margin-basic;
+  background-color: $white;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+
+  h5 {
+    margin: 10px;
+    margin-left: 0;
+  }
+
+  button {
+    margin-left: auto;
+  }
+}
+
+.card-form-buttons {
+  margin-left: auto;
+}
+
+.card-question {
+  width: 200px;
+  padding: $margin-basic;
+  margin-right: $margin-basic * 2;
+
+  input[type="text"]{
+    background-color: $background-color;
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.card-answer {
+  width: 400px;
+  border-left: 2px solid $darker-background;
+  padding: $margin-basic;
+  padding-left: $margin-basic * 2;
+
+  textarea {
+    overflow: auto;
+    background-color: $background-color;
+    width: 100%;
+    padding: 10px;
+  }
 }

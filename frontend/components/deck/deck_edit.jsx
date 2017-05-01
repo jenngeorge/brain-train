@@ -69,7 +69,9 @@ class DeckEdit extends React.Component{
     let deck = this.props.deck || {};
     return(
       <div className="deck-edit">
-        {deck.title}
+        <h1>
+          {deck.title}
+        </h1>
         <button onClick={this.toggleDeckForm}>
           Edit Deck Info
         </button>
