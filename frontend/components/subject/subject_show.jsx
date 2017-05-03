@@ -27,8 +27,11 @@ class SubjectShow extends React.Component {
 
   componentDidUpdate(nextProps){
 		if (nextProps.subjectId !== this.props.subjectId){
+			this.setState({redirect: false});
 			this.fetchSubject(this.props.subjectId);
 			this.props.fetchDecks(this.props.subjectId);
+		} else if (!this.props.subject && nextProps.subjectId){
+			this.setState({redirect: Object.keys(this.props.subjects)[0]});
 		}
 	}
 
@@ -76,7 +79,7 @@ class SubjectShow extends React.Component {
 
 	render() {
 		if (this.state.redirect) {
-			return <Redirect to="/library" />;
+			return <Redirect to={`/library/${this.state.redirect}`} />;
 		}
 
     let subject = this.props.subject || {};

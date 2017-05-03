@@ -72,14 +72,10 @@ class SubjectForm extends React.Component {
 		let that = this;
 		let deletedId = this.props.subjectId;
 		let allSubjectIds = this.props.allSubjectIds;
+
 		this.props.deleteSubject(this.props.subjectId)
 			.then(() => that.props.removeSubject(deletedId),
-						err => that.props.receiveErrors(err.responseJSON))
-						.then(()=> {
-							let idx = allSubjectIds.indexOf(deletedId);
-							allSubjectIds.splice(idx, 1);
-							that.setState({changedId: allSubjectIds[0]});
-							});
+						err => that.props.receiveErrors(err.responseJSON));
 	}
 
 	render() {

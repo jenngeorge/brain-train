@@ -39,7 +39,7 @@
   }
 }
 
-.subject-form-container {
+.sidebar-container {
   form {
     margin: 10px 20px 10px 40px;
     label {
@@ -83,6 +83,23 @@
   display: inline-block;
 }
 
-.subject-buttons button {
+.subject-buttons {
   margin-left: 0px;
+
+  .subject-form-container {
+
+    form {
+      display: inline-block;
+      
+      label {
+        color: black;
+
+        input[type="text"]{
+          margin-left: 10px;
+          background-color: $darker-background;
+        }
+      }
+
+    }
+  }
 }
