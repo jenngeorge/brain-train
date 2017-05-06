@@ -97,7 +97,7 @@ class SubjectForm extends React.Component {
 
 			return (
 				<div className="subject-form-container">
-					<form onSubmit={this.handleSubmit}>
+					<form onSubmit={this.handleSubmit} className="subject-form">
 						{this.renderErrors()}
 						<label> Title:
 							<input type="text"

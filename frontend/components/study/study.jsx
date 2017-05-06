@@ -17,15 +17,40 @@ class Study extends React.Component{
   }
 
   render(){
-    return (
-      <div className="study-container">
-        <StudySidebar
-          deck={this.props.deck}/>
+    let studyCards;
+    if (Object.keys(this.props.cards).length > 0) {
+      studyCards = (
         <StudyCard
           cards={this.props.cards || {}}
           updateCardScore={this.props.updateCardScore}
           createCardScore={this.props.createCardScore}
           currentUser={this.props.currentUser}/>
+      );
+    } else {
+      if (this.props.deck && this.props.deck.user_id === currentUser.id){
+        studyCards =  (
+          <div className="no-study-cards">
+            <h3> There aren't yet any cards in this deck! </h3>
+            <Link to={`/edit/${this.props.deck.id}`}>
+              <h5>
+                create some here
+              </h5>
+            </Link>
+          </div>
+        )
+      } else {
+        studyCards = (
+          <div className="no-study-cards">
+            <h3> There aren't yet any cards in this deck! </h3>
+          </div>);
+      }
+    }
+
+    return (
+      <div className="study-container">
+        <StudySidebar
+          deck={this.props.deck}/>
+        {studyCards}
       </div>
     );
   }

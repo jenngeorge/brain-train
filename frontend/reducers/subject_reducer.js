@@ -10,7 +10,7 @@ const SubjectReducer = (state = {byId: {}, allIds:[]}, action) => {
   switch(action.type) {
     case RECEIVE_SUBJECT:
       if (!newState.byId[action.subject.id]){
-        newState.allIds.push(action.subject.id);
+        newState.allIds.unshift(action.subject.id);
       }
       newState.byId[action.subject.id] = subjectHelper(action.subject);
       return newState;

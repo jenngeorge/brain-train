@@ -11,7 +11,7 @@ const CardReducer = (state = {byId: {}, allIds: []}, action) => {
   switch(action.type) {
     case RECEIVE_CARD:
       if (newState.byId[action.card.id] === undefined){
-        newState.allIds.push(action.card.id);
+        newState.allIds.unshift(action.card.id);
       }
       let newCard = merge({}, action.card);
       newCard.card_score = newCard.card_score.filter(cardScore => (

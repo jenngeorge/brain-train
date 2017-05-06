@@ -14,8 +14,16 @@
   display: block;
 }
 
+.no-study-cards {
+  margin: 0 auto;
+  margin-top: $padding-container *2;
 
-
+  h5 {
+    color: $primary-color;
+    text-align: center;
+    font-size: 1em;
+  }
+}
 
 .study-buttons {
   margin: 0 auto;

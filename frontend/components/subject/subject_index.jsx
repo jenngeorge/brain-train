@@ -8,7 +8,7 @@ class SubjectIndex extends React.Component{
   }
 
   render(){
-    let subjectLis = Object.keys(this.props.subjects).map(key => (
+    let subjectLis = this.props.subjectIds.map(key => (
       <Link to={`/library/${key}`} key={key}>
         <li >
            {this.props.subjects[key].title}

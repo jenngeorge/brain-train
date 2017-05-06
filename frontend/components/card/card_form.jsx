@@ -60,8 +60,10 @@ class CardForm extends React.Component {
 		);
 	}
 
-	handleDelete(){
+	handleDelete(e){
+		e.preventDefault();
 		this.props.deleteCard(this.props.card.id);
+		this.props.toggleCardForm();
 	}
 
 	render() {
@@ -75,40 +77,44 @@ class CardForm extends React.Component {
 			);
 		}
 
-		return (
-			<div className="card-form-container">
-				<form onSubmit={this.handleSubmit} className="card-index-item">
-					{this.renderErrors()}
-					<div className="card-question">
-						<label>
-							<h5>
-								Question:
-							</h5>
-							<input type="text"
-								value={this.state.question}
-								onChange={this.update("question")}
-								className="card-input" />
-						</label>
-					</div>
-					<div className="card-answer">
-						<label>
-							<h5>
-								Answer:
-							</h5>
-							<textarea rows="5" wrap="hard"
-								value={this.state.answer}
-								onChange={this.update("answer")}
-								className="card-input" />
-						</label>
-					</div>
-					<div className="card-form-buttons">
-						<button><input type="submit" value="Submit" /></button>
-						<button onClick={this.props.toggleCardForm}>Cancel</button>
-						{deleteButton}
-					</div>
-				</form>
-			</div>
-		);
+		if (this.props.card){
+			return (
+				<div className="card-form-container">
+					<form onSubmit={this.handleSubmit} className="card-index-item">
+						{this.renderErrors()}
+						<div className="card-question">
+							<label>
+								<h5>
+									Question:
+								</h5>
+								<input type="text"
+									value={this.state.question}
+									onChange={this.update("question")}
+									className="card-input" />
+							</label>
+						</div>
+						<div className="card-answer">
+							<label>
+								<h5>
+									Answer:
+								</h5>
+								<textarea rows="5" wrap="hard"
+									value={this.state.answer}
+									onChange={this.update("answer")}
+									className="card-input" />
+							</label>
+						</div>
+						<div className="card-form-buttons">
+							<button><input type="submit" value="Submit" /></button>
+							<button onClick={this.props.toggleCardForm}>Cancel</button>
+							{deleteButton}
+						</div>
+					</form>
+				</div>
+			);
+		} else {
+			return (<div></div>);
+		}
 
 	}
 

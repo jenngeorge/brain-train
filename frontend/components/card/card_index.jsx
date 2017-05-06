@@ -7,7 +7,7 @@ const CardIndex = (props) => {
   let cardLis;
 
   if (props.cards){
-    cardLis = Object.keys(props.cards).map(key => (
+    cardLis = props.cardIds.map(key => (
       <li key={key}>
         <CardIndexItem card={props.cards[key]}/>
       </li>

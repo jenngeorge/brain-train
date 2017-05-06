@@ -19,7 +19,7 @@ class Header extends React.Component{
     };
 
     this.modalStyle = {
-      overlay: {},
+      overlay: {zIndex: 3},
       content: {
         width: "450px",
         height: "400px",
