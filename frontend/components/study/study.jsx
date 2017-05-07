@@ -24,15 +24,22 @@ class Study extends React.Component{
   }
 
   getCardScores(){
-    const scores = {}
+    const scores = {};
+    const that = this;
     Object.keys(this.props.cards).forEach(key => {
-      let scoresKey = this.props.cards[key].card_score.score
+      let scoresKey = that.props.cards[key].card_score.score
       if (!scores[scoresKey]){
         scores[scoresKey] = 1
       } else {
         scores[scoresKey] += 1;
       }
     })
+
+    for (let i = 0; i < 4; i++){
+      if (!scores[i]){
+        scores[i] = 0;
+      }
+    }
 
     this.setState({cardScores: scores})
   }
@@ -50,7 +57,6 @@ class Study extends React.Component{
   }
 
   updateCardScore(card_score, id){
-    // debugger
     this.props.updateCardScore(card_score, id).then(this.getCardScores);
   }
 
@@ -76,8 +82,7 @@ class Study extends React.Component{
           cards={this.props.cards || {}}
           updateCardScore={this.updateCardScore}
           currentUser={this.props.currentUser}
-          chosenScores={this.state.chosenScores}
-          getCardScores={this.getCardScores}/>
+          chosenScores={this.state.chosenScores}/>
       );
     } else {
       if (this.props.deck && this.props.deck.user_id === currentUser.id){
@@ -104,7 +109,8 @@ class Study extends React.Component{
         <StudySidebar
           deck={this.props.deck}
           updateChosenScores={this.updateChosenScores}
-          cardScores={this.state.cardScores}/>
+          cardScores={this.state.cardScores}
+          cardsLength={Object.keys(this.props.cards).length}/>
         {studyCards}
       </div>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, withRouter } from 'react-router-dom';
+import PieChart from 'react-simple-pie-chart';
 
 class StudySidebar extends React.Component{
   constructor(props){
@@ -23,9 +24,42 @@ class StudySidebar extends React.Component{
       </li>
     ))
 
+    let scoreChart;
+    if (Object.keys(this.props.cardScores).length > 0){
+      const score0 = (this.props.cardScores[0] / this.props.cardsLength) * 100;
+      const score1 = (this.props.cardScores[1] / this.props.cardsLength) * 100;
+      const score2 = (this.props.cardScores[2] / this.props.cardsLength) * 100;
+      const score3 = (this.props.cardScores[3] / this.props.cardsLength) * 100;
+
+      scoreChart = (
+        <PieChart
+          slices={[
+            {
+              color: '#FF0D00',
+              value: score0,
+            },
+            {
+              color: '#FF9800',
+              value: score1,
+            },
+            {
+              color: '#00CD19',
+              value: score2,
+            },
+            {
+              color: '#0031B6',
+              value: score3,
+            },
+          ]}
+        />)
+    }
+
+
     return(
       <section className="sidebar-container">
         <h1>{this.props.deck ? this.props.deck.title : ""}</h1>
+
+        {scoreChart}
 
         <ul className="score-list">
           {scoreLis}
