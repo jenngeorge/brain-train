@@ -92,3 +92,7 @@ li.current-score {
     background-color: darken($color3, 15%)
   }
 }
+
+li.chosen {
+  color: $secondary-color;
+}

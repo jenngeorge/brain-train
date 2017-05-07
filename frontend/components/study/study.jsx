@@ -16,6 +16,7 @@ class Study extends React.Component{
     this.updateChosenScores = this.updateChosenScores.bind(this);
     this.updateCardScore = this.updateCardScore.bind(this);
     this.getCardScores = this.getCardScores.bind(this);
+    this.checkCardScores = this.checkCardScores.bind(this);
   }
 
   componentWillMount(){
@@ -41,29 +42,41 @@ class Study extends React.Component{
       }
     }
 
-    this.setState({cardScores: scores})
+    const cb = (includesScores) => {
+      this.setState({cardScores: scores, cardsWithScores: includesScores});
+    }
+
+    this.checkCardScores(this.state.chosenScores, scores, cb)
+  }
+
+  checkCardScores(chosenScores, cardScores, cb){
+    let includesScores = false;
+    chosenScores.forEach(chosenScore => {
+      if (cardScores[chosenScore] !== 0){
+        includesScores = true;
+      }
+    });
+
+    cb(includesScores);
   }
 
   updateChosenScores(scores){
-    let includesScores = false;
+    const cb = (includesScores) => {
+      this.setState({chosenScores: scores, cardsWithScores: includesScores})
+    }
 
-    scores.forEach(score => {
-      if (Object.keys(this.state.cardScores).indexOf(score) !== -1){
-        includesScores = true;
-      }
-    })
-
-    this.setState({chosenScores: scores, cardsWithScores: includesScores});
+    this.checkCardScores(scores, this.state.cardScores, cb);
   }
 
   updateCardScore(card_score, id){
-    this.props.updateCardScore(card_score, id).then(this.getCardScores);
+    this.props.updateCardScore(card_score, id)
+    .then(this.getCardScores);
   }
 
   render(){
     let studyCards;
-
     if (!this.state.cardsWithScores){
+
       studyCards = (
         <div className="no-study-cards">
           <h3>
@@ -110,7 +123,8 @@ class Study extends React.Component{
           deck={this.props.deck}
           updateChosenScores={this.updateChosenScores}
           cardScores={this.state.cardScores}
-          cardsLength={Object.keys(this.props.cards).length}/>
+          cardsLength={Object.keys(this.props.cards).length}
+          chosenScores={this.state.chosenScores}/>
         {studyCards}
       </div>
     );
