@@ -31,6 +31,7 @@ class Api::CardsController < ApplicationController
     end
 
     def index
+      @current_user_id = current_user.id
       if params[:deckId]
         @cards = Card.includes(:card_scores).where(deck_id: params[:deckId])
         @cards

@@ -9,22 +9,71 @@ import StudyCard from './study_card';
 class Study extends React.Component{
   constructor(props){
     super(props);
+
+    this.state = {chosenScores: ["0", "1", "2", "3"],
+        cardsWithScores: true,
+        cardScores: {}};
+    this.updateChosenScores = this.updateChosenScores.bind(this);
+    this.getCardScores = this.getCardScores.bind(this);
   }
 
   componentWillMount(){
     this.props.fetchDeck(this.props.deckId);
-    this.props.fetchCards(this.props.deckId);
+    this.props.fetchCards(this.props.deckId).then(this.getCardScores);
+  }
+
+  getCardScores(){
+    const scores = {}
+
+    Object.keys(this.props.cards).forEach(key => {
+      let scoresKey = this.props.cards[key].card_score.score
+      if (!scores[scoresKey]){
+        scores[scoresKey] = 1
+      } else {
+        scores[scoresKey] += 1;
+      }
+    })
+
+    this.setState({cardScores: scores})
+  }
+    
+  updateChosenScores(scores){
+    let includesScores = false;
+
+    scores.forEach(score => {
+      if (Object.keys(this.state.cardScores).indexOf(score) !== -1){
+        includesScores = true;
+      }
+    })
+
+    this.setState({chosenScores: scores, cardsWithScores: includesScores});
   }
 
   render(){
     let studyCards;
-    if (Object.keys(this.props.cards).length > 0) {
+
+    if (!this.state.cardsWithScores){
+      studyCards = (
+        <div className="no-study-cards">
+          <h3>
+            There aren't any cards with scores
+            of {this.state.chosenScores.join(", or ")}.
+          </h3>
+          <h3>
+            Try selecting different scores in the sidebar!
+          </h3>
+        </div>
+      )
+
+    } else if (Object.keys(this.props.cards).length > 0) {
       studyCards = (
         <StudyCard
           cards={this.props.cards || {}}
           updateCardScore={this.props.updateCardScore}
           createCardScore={this.props.createCardScore}
-          currentUser={this.props.currentUser}/>
+          currentUser={this.props.currentUser}
+          chosenScores={this.state.chosenScores}
+          getCardScores={this.props.getCardScores}/>
       );
     } else {
       if (this.props.deck && this.props.deck.user_id === currentUser.id){
@@ -49,7 +98,8 @@ class Study extends React.Component{
     return (
       <div className="study-container">
         <StudySidebar
-          deck={this.props.deck}/>
+          deck={this.props.deck}
+          updateChosenScores={this.updateChosenScores}/>
         {studyCards}
       </div>
     );

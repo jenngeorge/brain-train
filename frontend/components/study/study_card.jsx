@@ -12,10 +12,7 @@ class StudyCard extends React.Component {
 			priorCardId: null
 		};
 		this.flipCard = this.flipCard.bind(this);
-    this.nextCard = this.nextCard.bind(this);
-    this.prevCard = this.prevCard.bind(this);
 		this.currentCard = this.currentCard.bind(this);
-		this.createCurrentCardScore = this.createCurrentCardScore.bind(this);
 		this.updateCurrentCardScore = this.updateCurrentCardScore.bind(this);
 		this.cardClassName = this.cardClassName.bind(this);
 	}
@@ -25,55 +22,61 @@ class StudyCard extends React.Component {
 		return this.props.cards[cardIndex] || {};
 	}
 
-	createCurrentCardScore(){
-		let currentCard = this.currentCard();
-		if (currentCard.card_score && currentCard.card_score.length === 0 ){
-			let card_score = {card_score:
-				{user_id: this.props.currentUser.id,
-				card_id: currentCard.id}
-			};
-			this.props.createCardScore(card_score);
-		}
-	}
-
 	updateCurrentCardScore(score){
 		let currentCard = this.currentCard();
 		let card_score = {card_score: {score: score}};
 		this.props.updateCardScore(card_score, currentCard.card_score.id);
-	}
-
-	componentDidMount(){
-		this.createCurrentCardScore();
-	}
-
-	componentDidUpdate(){
-		this.createCurrentCardScore();
+		this.props.getCardScores();
 	}
 
   flipCard(){
     this.setState({flipped: !this.state.flipped});
   }
 
-  nextCard(){
-		let priorCard = this.currentCard();
-    let nextIndex = (this.state.currentCardIndex + 1) % Object.keys(this.props.cards).length;
-    this.setState({flipped: false},
-			this.setState({currentCardIndex: nextIndex,
-				direction: "next",
-				priorCardId: priorCard.id}));
-  }
+	skipCards(direction){
 
-  prevCard(){
+		const nextIndex = (currentIndex) => (
+			(currentIndex + 1) % Object.keys(this.props.cards).length
+		);
+
+		const prevIndex = (currentIndex) => {
+			let index = (currentIndex - 1);
+			if (index < 0){
+	      return Object.keys(this.props.cards).length + index;
+	    }
+			return index;
+		}
+
 		let priorCard = this.currentCard();
-    let prevIndex = (this.state.currentCardIndex - 1);
-    if (prevIndex < 0){
-      prevIndex = Object.keys(this.props.cards).length + prevIndex;
-    }
-    this.setState({flipped: false},
-			this.setState({currentCardIndex: prevIndex,
-					direction: "prev",
+		let newIndex;
+		if (direction === "next"){
+			newIndex = nextIndex(this.state.currentCardIndex);
+		} else {
+			newIndex = prevIndex(this.state.currentCardIndex);
+		}
+
+		let newCard = this.props.cards[Object.keys(this.props.cards)[newIndex]]
+
+		while (!this.props.chosenScores.includes(`${newCard.card_score.score}`)){
+			if (direction === "next"){
+				newIndex = nextIndex(newIndex)
+				newCard = this.props.cards[Object.keys(this.props.cards)[newIndex]];
+			} else {
+				newIndex = prevIndex(newIndex)
+				newCard = this.props.cards[Object.keys(this.props.cards)[newIndex]];
+			}
+		}
+
+		if (newCard === priorCard){
+			this.setState({flipped: false});
+			return;
+		} else {
+			this.setState({flipped: false},
+				this.setState({currentCardIndex: newIndex,
+					direction: direction,
 					priorCardId: priorCard.id}));
-  }
+		}
+	}
 
 	cardClassName(currentCard, cardId){
 		let priorCardId = this.state.priorCardId;
@@ -88,13 +91,32 @@ class StudyCard extends React.Component {
 
 
   render(){
-    let currentCard = this.currentCard();
-		let currentCardScore;
-		if (currentCard.card_score){
-			currentCardScore = currentCard.card_score.score;
-		} else {
-			currentCardScore = {};
+
+		if (this.state.noCards){
+			return (
+				<section className="study-card-container">
+					<h3>
+						There are no cards left with scores of
+						{this.props.chosenScores.join(", or ")}.
+						Try selecting different card
+						scores in the sidebar!
+					</h3>
+				</section>
+			)
 		}
+
+
+    let currentCard = this.currentCard();
+		let currentCardScore = currentCard.card_score.score;
+
+		let scoreLis = [0, 1, 2, 3].map(score => (
+			<li key={score} onClick={this.updateCurrentCardScore.bind(this, score)}
+				className={currentCardScore === score ? "current-score": ""}>
+				<h1>
+					{score}
+				</h1>
+			</li>
+		))
 
 		let cardLis = Object.keys(this.props.cards).map(key => {
 			let card = this.props.cards[key];
@@ -118,8 +140,7 @@ class StudyCard extends React.Component {
 	        </div>
 				</li>
 			);
-		}
-	);
+		});
 
     return(
       <section className="study-card-container">
@@ -128,43 +149,20 @@ class StudyCard extends React.Component {
 				</ul>
 
 				<section className="study-buttons">
-					<button onClick={this.prevCard}>
+					<button onClick={this.skipCards.bind(this, "prev")}>
 						Prev Card
 					</button>
 					<button onClick={this.flipCard}>
 						{this.state.flipped ? "See Question" : "See Answer"}
 					</button>
-					<button onClick={this.nextCard}>
+					<button onClick={this.skipCards.bind(this, "next")}>
 						Next Card
 					</button>
 				</section>
 
 				<section className="card-scores">
 					<ul>
-						<li onClick={this.updateCurrentCardScore.bind(this, 0)}
-							className={currentCardScore === 0 ? "current-score": ""}>
-							<h1>
-								0
-							</h1>
-						</li>
-						<li onClick={this.updateCurrentCardScore.bind(this, 1)}
-							className={currentCardScore === 1 ? "current-score": ""}>
-							<h1>
-								1
-							</h1>
-						</li>
-						<li onClick={this.updateCurrentCardScore.bind(this, 2)}
-							className={currentCardScore === 2 ? "current-score": ""}>
-							<h1>
-								2
-							</h1>
-						</li>
-						<li onClick={this.updateCurrentCardScore.bind(this, 3)}
-							className={currentCardScore === 3 ? "current-score": ""}>
-							<h1>
-								3
-							</h1>
-						</li>
+						{scoreLis}
 					</ul>
 				</section>
       </section>

@@ -22,12 +22,6 @@ const CardReducer = (state = {byId: {}, allIds: []}, action) => {
     case RECEIVE_CARDS:
       let allIds = Object.keys(action.cards);
       let byId = merge({}, action.cards);
-      Object.keys(byId).forEach(key => {
-        let card = byId[key];
-        card.card_score = card.card_score.filter(cardScore => (
-          cardScore.user_id === window.currentUser.id
-        ))[0] || [];
-      });
       return {byId, allIds};
     case REMOVE_CARD:
       newState.byId = omit(newState.byId, action.cardId);
