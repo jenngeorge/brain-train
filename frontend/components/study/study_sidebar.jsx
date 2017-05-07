@@ -17,11 +17,9 @@ class StudySidebar extends React.Component{
   }
 
   render(){
-
     const scoreLis = [0, 1, 2, 3].map(score => (
       <li key={score} onClick={this.updateScore.bind(this, score)}>
-        {score}
-        progress-ish bar here
+        {score} : {this.props.cardScores[score]} cards
       </li>
     ))
 

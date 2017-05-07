@@ -14,6 +14,7 @@ class Study extends React.Component{
         cardsWithScores: true,
         cardScores: {}};
     this.updateChosenScores = this.updateChosenScores.bind(this);
+    this.updateCardScore = this.updateCardScore.bind(this);
     this.getCardScores = this.getCardScores.bind(this);
   }
 
@@ -24,7 +25,6 @@ class Study extends React.Component{
 
   getCardScores(){
     const scores = {}
-
     Object.keys(this.props.cards).forEach(key => {
       let scoresKey = this.props.cards[key].card_score.score
       if (!scores[scoresKey]){
@@ -36,7 +36,7 @@ class Study extends React.Component{
 
     this.setState({cardScores: scores})
   }
-    
+
   updateChosenScores(scores){
     let includesScores = false;
 
@@ -47,6 +47,11 @@ class Study extends React.Component{
     })
 
     this.setState({chosenScores: scores, cardsWithScores: includesScores});
+  }
+
+  updateCardScore(card_score, id){
+    // debugger
+    this.props.updateCardScore(card_score, id).then(this.getCardScores);
   }
 
   render(){
@@ -69,11 +74,10 @@ class Study extends React.Component{
       studyCards = (
         <StudyCard
           cards={this.props.cards || {}}
-          updateCardScore={this.props.updateCardScore}
-          createCardScore={this.props.createCardScore}
+          updateCardScore={this.updateCardScore}
           currentUser={this.props.currentUser}
           chosenScores={this.state.chosenScores}
-          getCardScores={this.props.getCardScores}/>
+          getCardScores={this.getCardScores}/>
       );
     } else {
       if (this.props.deck && this.props.deck.user_id === currentUser.id){
@@ -99,7 +103,8 @@ class Study extends React.Component{
       <div className="study-container">
         <StudySidebar
           deck={this.props.deck}
-          updateChosenScores={this.updateChosenScores}/>
+          updateChosenScores={this.updateChosenScores}
+          cardScores={this.state.cardScores}/>
         {studyCards}
       </div>
     );

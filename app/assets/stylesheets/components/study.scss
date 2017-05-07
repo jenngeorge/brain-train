@@ -47,14 +47,9 @@
     width: 25%;
     height: 100px;
     margin: 2px;
-    background-color: $primary-color;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    &:hover {
-      background-color: darken($primary-color, 10%)
-    }
 
     h1 {
       font-size: 2em;
@@ -63,5 +58,37 @@
 }
 
 li.current-score {
-  background-color: $secondary-color;
+  border-bottom: 20px solid $primary-color;
+}
+
+.score-0 {
+  background-color: $color0;
+
+  &:hover {
+    background-color: darken($color0, 15%)
+  }
+}
+
+.score-1 {
+  background-color: $color1;
+
+  &:hover {
+    background-color: darken($color1, 15%)
+  }
+}
+
+.score-2 {
+  background-color: $color2;
+
+  &:hover {
+    background-color: darken($color2, 15%)
+  }
+}
+
+.score-3 {
+  background-color: $color3;
+
+  &:hover {
+    background-color: darken($color3, 15%)
+  }
 }

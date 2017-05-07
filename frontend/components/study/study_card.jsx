@@ -25,8 +25,7 @@ class StudyCard extends React.Component {
 	updateCurrentCardScore(score){
 		let currentCard = this.currentCard();
 		let card_score = {card_score: {score: score}};
-		this.props.updateCardScore(card_score, currentCard.card_score.id);
-		this.props.getCardScores();
+		this.props.updateCardScore(card_score, currentCard.card_score.id)
 	}
 
   flipCard(){
@@ -111,7 +110,7 @@ class StudyCard extends React.Component {
 
 		let scoreLis = [0, 1, 2, 3].map(score => (
 			<li key={score} onClick={this.updateCurrentCardScore.bind(this, score)}
-				className={currentCardScore === score ? "current-score": ""}>
+				className={currentCardScore === score ? `score-${score} current-score`: `score-${score}`}>
 				<h1>
 					{score}
 				</h1>
