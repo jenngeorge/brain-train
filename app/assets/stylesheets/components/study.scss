@@ -65,7 +65,7 @@ li.current-score {
   background-color: $color0;
 
   &:hover {
-    background-color: darken($color0, 15%)
+    background-color: darken($color0, 15%);
   }
 }
 
@@ -73,7 +73,7 @@ li.current-score {
   background-color: $color1;
 
   &:hover {
-    background-color: darken($color1, 15%)
+    background-color: darken($color1, 15%);
   }
 }
 
@@ -81,7 +81,7 @@ li.current-score {
   background-color: $color2;
 
   &:hover {
-    background-color: darken($color2, 15%)
+    background-color: darken($color2, 15%);
   }
 }
 
@@ -89,10 +89,54 @@ li.current-score {
   background-color: $color3;
 
   &:hover {
-    background-color: darken($color3, 15%)
+    background-color: darken($color3, 15%);
   }
 }
 
-li.chosen {
-  color: $secondary-color;
+
+// scores list in sidebar
+
+.score-list {
+  margin-top: $padding-container;
+  
+  span {
+    padding: 10px 15px;
+    color: $white;
+  }
+
+  h5 {
+    display: inline-block;
+    color: $white;
+    font-size: 1em;
+    margin: 0px 0px 0px 20px;
+
+  }
+
+  li {
+    padding: $margin-basic;
+
+    &:hover {
+      background-color: $light-primary-color;
+    }
+  }
+
+  .score-0{
+    border: 4px solid $color0;
+  }
+
+  .score-1{
+    border: 4px solid $color1;
+  }
+
+  .score-2{
+    border: 4px solid $color2;
+  }
+
+  .score-3{
+    border: 4px solid $color3;
+  }
+
+  .not-chosen span{
+    background-color: $primary-color;
+  }
 }

@@ -20,9 +20,15 @@ class StudySidebar extends React.Component{
   render(){
     const scoreLis = [0, 1, 2, 3].map(score => (
       <li key={score}
-        onClick={this.updateScore.bind(this, score)}
-        className={this.props.chosenScores.includes(`${score}`) ? "chosen" : ""}>
-        {score} : {this.props.cardScores[score]} cards
+        onClick={this.updateScore.bind(this, score)}>
+        <span className={this.props.chosenScores.includes(`${score}`) ? "" : "not-chosen"}>
+          <span className={`score-${score}`}>
+            {score}
+          </span>
+        </span>
+        <h5 className="cards">
+          {this.props.cardScores[score]} cards
+        </h5>
       </li>
     ))
 
@@ -64,7 +70,7 @@ class StudySidebar extends React.Component{
         {scoreChart}
 
         <ul className="score-list">
-          {scoreLis}
+          {this.props.cardsLength > 0 ? scoreLis : ""}
         </ul>
 
       </section>

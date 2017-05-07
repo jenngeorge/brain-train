@@ -75,29 +75,7 @@ class Study extends React.Component{
 
   render(){
     let studyCards;
-    if (!this.state.cardsWithScores){
-
-      studyCards = (
-        <div className="no-study-cards">
-          <h3>
-            There aren't any cards with scores
-            of {this.state.chosenScores.join(", or ")}.
-          </h3>
-          <h3>
-            Try selecting different scores in the sidebar!
-          </h3>
-        </div>
-      )
-
-    } else if (Object.keys(this.props.cards).length > 0) {
-      studyCards = (
-        <StudyCard
-          cards={this.props.cards || {}}
-          updateCardScore={this.updateCardScore}
-          currentUser={this.props.currentUser}
-          chosenScores={this.state.chosenScores}/>
-      );
-    } else {
+    if (Object.keys(this.props.cards).length === 0) {
       if (this.props.deck && this.props.deck.user_id === currentUser.id){
         studyCards =  (
           <div className="no-study-cards">
@@ -115,6 +93,25 @@ class Study extends React.Component{
             <h3> There aren't yet any cards in this deck! </h3>
           </div>);
       }
+    } else if (!this.state.cardsWithScores){
+      studyCards = (
+        <div className="no-study-cards">
+          <h3>
+            There aren't any cards with scores
+            of {this.state.chosenScores.join(", or ")}.
+          </h3>
+          <h3>
+            Try selecting different scores in the sidebar!
+          </h3>
+        </div>)
+    } else {
+      studyCards = (
+        <StudyCard
+          cards={this.props.cards || {}}
+          updateCardScore={this.updateCardScore}
+          currentUser={this.props.currentUser}
+          chosenScores={this.state.chosenScores}/>
+      );
     }
 
     return (
