@@ -11,7 +11,7 @@ class SubjectIndex extends React.Component{
     let subjectLis = this.props.subjectIds.map(key => (
       <Link to={`/library/${key}`} key={key}>
         <li >
-           {this.props.subjects[key].title}
+           {this.props.subjects[key] ? this.props.subjects[key].title : ""}
         </li>
       </Link>
     ));
