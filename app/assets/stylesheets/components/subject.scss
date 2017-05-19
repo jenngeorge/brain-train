@@ -9,6 +9,13 @@
     display: inline;
   }
 
+  h3 {
+    text-align: center;
+    a {
+      color: $primary-color;
+    }
+  }
+
 }
 
 .library-container .sidebar-container {

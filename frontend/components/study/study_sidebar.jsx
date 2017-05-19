@@ -67,7 +67,7 @@ class StudySidebar extends React.Component{
       <section className="sidebar-container">
         <h1>{this.props.deck ? this.props.deck.title : ""}</h1>
 
-        {scoreChart}
+        {this.props.cardsLength > 0 ? scoreChart : ""}
 
         <ul className="score-list">
           {this.props.cardsLength > 0 ? scoreLis : ""}

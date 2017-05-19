@@ -12,6 +12,10 @@ class SearchSidebar extends React.Component{
     this.update = this.update.bind(this);
   }
 
+  componentWillMount(){
+    this.props.fetchSubjects({search:""});
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value

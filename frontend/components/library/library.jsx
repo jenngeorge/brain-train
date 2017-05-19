@@ -6,6 +6,15 @@ import SubjectContainer from '../subject/subject_container';
 const Library = (props) => (
   <section className='library-container'>
     <LibrarySidebar />
+    <Route exact path="/library" render={(props) => {
+        return (
+          <section className="subject-show-container">
+            <h3>
+              Select a subject from the sidebar, <br/>
+              or follow more from the <Link to="/search">Subjects </Link>
+               page</h3>
+          </section>)
+      }} />
     <Route path="/library/:subjectId" component={SubjectContainer}/>
   </section>
   );
