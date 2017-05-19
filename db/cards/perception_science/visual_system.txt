@@ -1,0 +1,16 @@
+A tiny hole that lets reflections from only one direction pass through; perfect image but not enough light ~A:~ pinhole optics
+pinhole camera eye ~A:~ nautilus
+2 lenses; 260,000,000 receptors ~A:~ human eyes
+main focus; only cones ~A:~ fovea
+blind spot; where the optic nerve leaves the eye ~A:~ optic disk"
+when there's no change in response; nerve's stop responding from fatigue; troxler fading ~A:~ adaptation
+LGN ~A:~ behind eye; crossed visual fields; on/off center like ganglion; organized with nearby parts of visual field next to each other
+Hubel & Wiesel discovered; respond to bars; constructed from LGN cells in a line; located in V1 ~A:~ Simple cells
+discovered orientation selectivity; hierarchy of cells and their connections to describe RFs; vision grounded on these line detectors ~A:~ Simple cells"
+Cortical magnification ~A:~ fovea overepresented in the brain
+Hypercolumn ~A:~ in V1, lots of orientation columns stacked up; ocular dominance slabs from each eye; all measurements for a local area
+Stereopsis ~A:~ Different images to both eyes i.e. R/B glasses; match them up, creates depth
+Mechanism for stereopsis ~A:~ Ocular dominance slabs in V1 Binocular cells that respond to a preferred disparity
+Cortical color blindness ~A:~ Damage to V4; Mr. I; cones still work
+Opponent process theory  ~A:~  R/G fight each other -> B/Y fight each other; Ganglion cells in the retina do this
+Cone types  ~A:~ S - Blue; M - Green; L - Red

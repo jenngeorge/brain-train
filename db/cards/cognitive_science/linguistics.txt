@@ -1,0 +1,15 @@
+made with both lips [Peer] [Bin] [Month] ~A:~ bilabial articulation
+involve lower lip and upper teeth [Fire] [Vow] ~A:~ labiodental articulation
+when tongue touches or is brought near the alveolar ridge; at the beginning of English words [Top] [Deer] [Soap] [Zip] [Lip] [Neck] ~A:~ alveolar sounds
+Show, meaSure, Chip, JuDGe ~A:~ alveopalatal consonants examples
+velars ~A:~ sounds made with the tongue touching or near the velum: Call, Guy, haNG
+pharyngeals ~A:~ sounds made through modification of airflow in the pharynx by retracting the tongue or constricting the pharynx
+fricatives ~A:~ consonants produced with a continuous airflow through the mouth
+affricates ~A:~ noncontinuant consonants that show slow release of the closure
+glide ~A:~ rapidly articulated nonsyllabic segment: Yes, boY, Wet, noW
+diphthongs ~A:~ vowels that exhibit a change in quality within a single syllable
+feature (phonological) ~A:~ the smallest unit of analysis of phonological structure, combinations of which make up segments (eg nasal, continuant)
+sounds produced by curling the tongue tip back in the mouth (American English r) ~A:~ retroflex
+double consonants (eg [tt]) that are articulated for a longer period of time than the corresponding single consonant (eg [t]) ~A:~ geminates
+the distribution of allophones in their respective phonetic environments such that one never appears in the same phonetic context as the other (eg distribution of long and short vowels in English) ~A:~ complementary distribution
+a type of transcription of sounds where phonetic details are ignored and only phonemic contrast is recorded ~A:~ phonemic transcription

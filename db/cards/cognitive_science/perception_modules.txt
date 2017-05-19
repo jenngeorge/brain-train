@@ -1,0 +1,17 @@
+Broca's patient `Tan`, only capable of saying word `tan` and had paralysis of right side of body, other than that normal ~A:~ Broca's Area
+Motor Cortex/Somatosensory Cortex ~A:~ Both on top of cortex; Adjacent cells on motor cortex activate adjacent muscles in body; Adjacent cells on somatosensory cortex respond to adjacent receptors on skin
+Corpus callosum ~A:~ Fibers connecting left and right hemispheres and facilitates interhemispheric communication
+What (ventral) pathway ~A:~ To inferior part of temporal lobe, object recognition
+Where (dorsal) pathway ~A:~ To parietal lobe, location, action, navigating, grasping
+Physiology of Subjective Contours ~A:~ V2 cells can't tell the difference between an illusory line and a real one
+Inferotemporal Cortex ~A:~ -Cells that respond to `parts`, Characteristic spatial patterns that are part of familiar shapes, Meaningless on their own
+Parahippocampal Place Area (PPA) ~A:~ Inner mid portion of temporal lobe; Recognition of places, fMRI shows activity when viewing houses, outdoor scenes or buildings
+Fusiform Face Area (FFA) ~A:~ Ventral temporal cortex; Face recognition: Damage here leads to face recognition problems: prosopagnosia
+Lateral Occipital Cortex ~A:~ Recognition of objects -- Damage here leads to object recognition problems: visual agnosia
+Extrastriate Body Area (EBA) ~A:~ Extrastriate cortex in occipital area; Recognition of whole human bodies or parts from photos, stick figures or silhouettes but low activity to faces, objects, or animal bodies
+Visual Agnosia ~A:~ Due to damage to lateral occipital cortex; Patient can see details, but cannot name objects or describe their function; Patient DF cannot recognize objects or even report orientation, yet her hands orient correctly to openings or for grasping objects
+Inability to perceive continuous motion, Bilateral damage to MT/MST, Have no motion-based cues ~A:~ Motion Blindness
+Mediotemporal Area (MT) ~A:~ Also called V5; Almost all neurons in this area are directionally selective; V1 neurons deal with component motion; Prefer motions of patterns; Large RF's; MT neurons integrate motion signals from V1 neurons, and are thereby able to detect pattern motion. When motion can be broken into horizontal or vertical movement, does not pick it up, only when motion is in diagonal directions
+Medial Superior Temporal Area (MST) ~A:~ Very large RF's, bigger than MT neurons. Selective to optic flow patterns (Expansion, Contraction, Rotation, Shearing). The MST receives most of its inputs from the medial temporal (MT) area
+Balint's Syndrome ~A:~ Loss of attention or awareness to both sides. Damage to both parietal lobes. Attentional tunnel vision, only `see` one item at a time. Neglect and Balint's show parietal lobes important in control of attention
+Parietal Lobes ~A:~ Responsible for attention; neglect and Balint's Syndrome show importance
