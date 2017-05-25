@@ -39,9 +39,13 @@
       color: $white;
       padding: 10px 20px 10px 40px;
 
-      &:hover {
+      &:hover{
         background-color: $light-primary-color;
       }
+    }
+
+    .selected-subject {
+      background-color: $light-primary-color;
     }
   }
 }

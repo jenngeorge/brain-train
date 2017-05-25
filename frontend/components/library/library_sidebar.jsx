@@ -28,7 +28,7 @@ class LibrarySidebar extends React.Component{
   }
 
   render(){
-
+    const selectedSubject = this.props.location.pathname.split("/library/")[1];
     return(
       <section className="sidebar-container">
         <h1>Subjects</h1>
@@ -37,7 +37,7 @@ class LibrarySidebar extends React.Component{
           </button>
         {this.subjectForm()}
 
-        <SubjectIndexContainer />
+        <SubjectIndexContainer selectedSubject={selectedSubject}/>
       </section>
     );
   }
