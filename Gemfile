@@ -34,6 +34,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'figaro'
 
+gem "paperclip", "~> 5.0.0.beta1"
+
 gem 'sanitize'
 
 # Use Capistrano for deployment

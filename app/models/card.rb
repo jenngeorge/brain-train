@@ -4,6 +4,12 @@ class Card < ApplicationRecord
     has_many :card_scores
     belongs_to :deck
 
+    has_attached_file :question_image, default_url: "default.jpg"
+    validates_attachment_content_type :question_image, content_type: /\Aimage\/.*\Z/
+
+    has_attached_file :answer_image, default_url: "default.jpg"
+    validates_attachment_content_type :answer_image, content_type: /\Aimage\/.*\Z/
+
     def current_user_score(current_user_id)
       card_score = self.card_scores.where(user_id: current_user_id)[0]
       if card_score
