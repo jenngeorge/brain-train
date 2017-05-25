@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { receiveSubject, deleteSubjectFollow } from '../../actions/subject_actions';
+import { deleteSubjectFollow,
+        fetchSubject } from '../../actions/subject_actions';
 import { fetchDecks } from '../../actions/deck_actions';
-import { fetchSubject } from '../../util/subject_api_util';
 import SubjectShow from './subject_show';
 
 const mapStateToProps = (state, props) => ({
@@ -13,10 +13,9 @@ const mapStateToProps = (state, props) => ({
 
 
 const mapDispatchToProps = dispatch => ({
-  receiveSubject: subject => dispatch(receiveSubject(subject)),
   fetchDecks: subjectId => dispatch(fetchDecks(subjectId)),
-  deleteSubjectFollow: (subject_id) => dispatch(deleteSubjectFollow(subject_id)),
-  fetchSubject
+  deleteSubjectFollow: (subjectId) => dispatch(deleteSubjectFollow(subjectId)),
+  fetchSubject: (subjectId) => dispatch(fetchSubject(subjectId))
 });
 
 export default connect(

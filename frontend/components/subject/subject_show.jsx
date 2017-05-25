@@ -13,7 +13,6 @@ class SubjectShow extends React.Component {
 			redirect: false
     };
 
-    this.fetchSubject = this.fetchSubject.bind(this);
     this.subjectForm = this.subjectForm.bind(this);
     this.toggleSubjectForm = this.toggleSubjectForm.bind(this);
 		this.toggleDeckForm = this.toggleDeckForm.bind(this);
@@ -21,28 +20,27 @@ class SubjectShow extends React.Component {
   }
 
   componentWillMount(){
-    this.fetchSubject(this.props.subjectId);
+    this.props.fetchSubject(this.props.subjectId);
 		this.props.fetchDecks(this.props.subjectId);
   }
 
   componentDidUpdate(nextProps){
 		if (nextProps.subjectId !== this.props.subjectId){
 			this.setState({redirect: false});
-			this.fetchSubject(this.props.subjectId);
+			this.props.fetchSubject(this.props.subjectId);
 			this.props.fetchDecks(this.props.subjectId);
-		} else if (!this.props.subject && nextProps.subjectId){
-			this.setState({redirect: Object.keys(this.props.subjects)[0]});
 		}
 	}
 
-  fetchSubject(id){
-    this.props.fetchSubject(id)
-      .then(subject => this.props.receiveSubject(subject));
-  }
-
 	unfollowSubject(){
 		this.props.deleteSubjectFollow(this.props.subjectId)
-			.then(this.setState({redirect: true}));
+			.then(() => {
+				if (Object.keys(this.props.subjects).length > 0) {
+					this.setState({redirect: Object.keys(this.props.subjects)[0]});
+				} else {
+					this.setState({redirect: "noSubjects"});
+				}
+			});
 	}
 
   subjectForm(){
@@ -79,7 +77,11 @@ class SubjectShow extends React.Component {
 
 	render() {
 		if (this.state.redirect) {
-			return <Redirect to={`/library/${this.state.redirect}`} />;
+			if (this.state.redirect === "noSubjects") {
+				return <Redirect to={`/library`} />;
+			} else {
+				return <Redirect to={`/library/${this.state.redirect}`} />;
+			}
 		}
 
     let subject = this.props.subject || {};

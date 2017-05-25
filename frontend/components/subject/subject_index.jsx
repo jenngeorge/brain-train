@@ -9,7 +9,7 @@ class SubjectIndex extends React.Component{
 
   render(){
     let subjectLis = this.props.subjectIds.map(key => (
-      <Link to={`/library/${key}`} key={key}>
+      <Link to={`/library/${key}`} key={`subject${key}`}>
         <li >
            {this.props.subjects[key] ? this.props.subjects[key].title : ""}
         </li>
