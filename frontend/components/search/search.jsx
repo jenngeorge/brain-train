@@ -6,7 +6,7 @@ import SearchIndex from './search_index';
 class Search extends React.Component{
 
   componentDidMount(){
-    this.props.fetchSubjects();
+    this.props.fetchSubjects({search: ""});
     this.props.fetchDecks();
   }
 
