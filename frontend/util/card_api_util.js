@@ -1,16 +1,20 @@
-export const createCard = (card) => {
+export const createCard = (formData) => {
   return $.ajax({
     method: 'post',
     url: '/api/cards',
-    data: card
+    contentType: false,
+    processData: false,
+    data: formData
   });
 };
 
-export const updateCard = (card, id) => {
+export const updateCard = (formData, id) => {
   return $.ajax({
     method: 'patch',
     url: `/api/cards/${id}`,
-    data: card
+    contentType: false,
+    processData: false,
+    data: formData
   });
 };
 

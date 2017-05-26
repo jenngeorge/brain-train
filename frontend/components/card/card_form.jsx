@@ -9,6 +9,10 @@ class CardForm extends React.Component {
 			answer: this.props.card.answer || "",
 			question: this.props.card.question || "",
       deck_id: this.props.deckId,
+			answer_image: null,
+			answer_image_url: this.props.card.answer_image || "",
+			question_image: null,
+			question_image_url: this.props.card.question_image || ""
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleDelete = this.handleDelete.bind(this);
@@ -24,13 +28,35 @@ class CardForm extends React.Component {
 		});
 	}
 
-	handleSubmit(e) {
+	updateFile(type, e){
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+			if (type === 'answer'){
+				this.setState({ answer_image: file, answer_image_url: fileReader.result });
+			} else {
+				this.setState({ question_image: file, question_image_url: fileReader.result });
+			}
+    }
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
+
+	handleSubmit(e){
 		e.preventDefault();
-    let card = this.state;
 		let that = this;
+		let formData = new FormData();
+		formData.append("card[answer]", this.state.answer)
+		formData.append("card[question]", this.state.question)
+		formData.append("card[deck_id]", this.state.deck_id)
+		formData.append("card[answer_image]", this.state.answer_image)
+		formData.append("card[question_image]", this.state.question_image)
 
 		if (this.props.formType === "create"){
-			this.props.createCard({card}).then(
+			this.props.createCard(formData).then(
 				(createdCard)=> {
 					that.props.toggleCardForm();
 					that.props.receiveCard(createdCard);
@@ -38,7 +64,7 @@ class CardForm extends React.Component {
 				(err) => that.props.receiveErrors(err.responseJSON)
 			);
 		} else {
-			this.props.updateCard({card}, this.props.card.id).then(
+			this.props.updateCard(formData, this.props.card.id).then(
 				(updatedCard)=> {
           that.props.toggleCardForm();
 					that.props.receiveCard(updatedCard);
@@ -92,6 +118,7 @@ class CardForm extends React.Component {
 									onChange={this.update("question")}
 									className="card-input" />
 							</label>
+							<input type="file" onChange={this.updateFile.bind(this, 'question')}/>
 						</div>
 						<div className="card-answer">
 							<label>
@@ -103,6 +130,7 @@ class CardForm extends React.Component {
 									onChange={this.update("answer")}
 									className="card-input" />
 							</label>
+							<input type="file" onChange={this.updateFile.bind(this, 'answer')}/>
 						</div>
 						<div className="card-form-buttons">
 							<button><input type="submit" value="Submit" /></button>

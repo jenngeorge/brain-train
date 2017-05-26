@@ -4,3 +4,5 @@ json.question @card.question
 json.answer @card.answer
 json.card_score @card.card_scores
 json.id @card.id
+json.question_image asset_path(@card.question_image.url)
+json.answer_image asset_path(@card.answer_image.url)
