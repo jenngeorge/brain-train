@@ -1,5 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, withRouter } from 'react-router-dom';
+import { BrowserRouter as Router,
+        Route,
+        Link,
+        withRouter } from 'react-router-dom';
 import PieChart from 'react-simple-pie-chart';
 
 class StudySidebar extends React.Component{
@@ -62,10 +65,22 @@ class StudySidebar extends React.Component{
         />)
     }
 
+    let topInfo;
+    if (this.props.deck){
+      topInfo = (
+        <section>
+          <Link to={`library/${deck.subject_id}`} >
+            Back to Subjects
+          </Link>
+          <h1>{this.props.deck.title}</h1>
+        </section>
+      )
+    }
+
 
     return(
       <section className="sidebar-container">
-        <h1>{this.props.deck ? this.props.deck.title : ""}</h1>
+        {topInfo}
 
         {this.props.cardsLength > 0 ? scoreChart : ""}
 
