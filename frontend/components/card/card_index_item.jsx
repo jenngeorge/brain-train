@@ -23,6 +23,30 @@ class CardIndexItem extends React.Component{
 
 
   render(){
+    let answerImage;
+    let questionImage;
+
+    if (this.props.card.answer_image.includes("default.jpg")){
+      answerImage = ""
+    } else {
+      answerImage = (
+        <img
+          className="card-edit-image"
+          src={this.props.card.answer_image}
+          alt="answer-image"/>
+      )
+    }
+    if (this.props.card.question_image.includes("default.jpg")){
+      questionImage = ""
+    } else {
+      questionImage = (
+        <img
+          className="card-edit-image"
+          src={this.props.card.question_image}
+          alt="question-image"/>
+      )
+    }
+
     if (this.state.cardFormOpen){
       return (
         < CardFormContainer
@@ -37,10 +61,12 @@ class CardIndexItem extends React.Component{
           <div className="card-question">
               <h5>Question:</h5>
               {this.props.card.question}
+              {questionImage}
           </div>
           <div className="card-answer">
             <h5>Answer:</h5>
             {this.props.card.answer}
+            {answerImage}
           </div>
           <button onClick={this.toggleCardForm}>
             Edit Card

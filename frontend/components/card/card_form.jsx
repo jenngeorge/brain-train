@@ -9,9 +9,9 @@ class CardForm extends React.Component {
 			answer: this.props.card.answer || "",
 			question: this.props.card.question || "",
       deck_id: this.props.deckId,
-			answer_image: null,
+			answer_image: "default.jpg",
 			answer_image_url: this.props.card.answer_image || "",
-			question_image: null,
+			question_image: "default.jpg",
 			question_image_url: this.props.card.question_image || ""
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);

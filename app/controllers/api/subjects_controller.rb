@@ -2,7 +2,7 @@ class Api::SubjectsController < ApplicationController
 
   def create
     @subject = Subject.new(subject_params)
-    if @subject.save
+    if @subject.save!
       SubjectFollow.create!(subject_id: @subject.id, user_id: current_user.id)
       render :show
     else
