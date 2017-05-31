@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170419055424) do
+ActiveRecord::Schema.define(version: 20170531151549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,11 +27,21 @@ ActiveRecord::Schema.define(version: 20170419055424) do
   end
 
   create_table "cards", force: :cascade do |t|
-    t.text     "answer",     null: false
-    t.text     "question",   null: false
-    t.integer  "deck_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "answer",                      null: false
+    t.text     "question",                    null: false
+    t.integer  "deck_id",                     null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "question_image_file_name"
+    t.string   "question_image_content_type"
+    t.integer  "question_image_file_size"
+    t.datetime "question_image_updated_at"
+    t.string   "answer_image_file_name"
+    t.string   "answer_image_content_type"
+    t.integer  "answer_image_file_size"
+    t.datetime "answer_image_updated_at"
+    t.string   "answer_image"
+    t.string   "question_image"
     t.index ["deck_id"], name: "index_cards_on_deck_id", using: :btree
   end
 

@@ -9,9 +9,12 @@ class CardForm extends React.Component {
 			answer: this.props.card.answer || "",
 			question: this.props.card.question || "",
       deck_id: this.props.deckId,
+			question_image: this.props.card.question_image || "",
+			answer_image: this.props.card.answer_image || ""
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleDelete = this.handleDelete.bind(this);
+		this.uploadImage = this.uploadImage.bind(this);
 	}
 
 	componentWillMount(){
@@ -22,6 +25,23 @@ class CardForm extends React.Component {
 		return e => this.setState({
 			[field]: e.currentTarget.value
 		});
+	}
+
+	uploadImage(type, e) {
+		e.preventDefault();
+		let that = this;
+		debugger
+		cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, (error, results) => {
+			if(!error){
+				// this.props.postImage(results[0]);
+				debugger
+				if (type === "question"){
+					that.setState({question_image: results[0].secure_url})
+				} else {
+					that.setState({answer_image: results[0].secure_url})
+				}
+			}
+		})
 	}
 
 	handleSubmit(e) {
@@ -67,7 +87,6 @@ class CardForm extends React.Component {
 	}
 
 	render() {
-
 		let deleteButton;
 		if (this.props.formType === "update"){
 			deleteButton = (
@@ -92,6 +111,10 @@ class CardForm extends React.Component {
 									onChange={this.update("question")}
 									className="card-input" />
 							</label>
+							<img src={this.state.question_image ? this.state.question_image : ""} />
+							<button onClick={this.uploadImage.bind(this, "question")}>
+								Upload Image
+							</button>
 						</div>
 						<div className="card-answer">
 							<label>
@@ -103,6 +126,10 @@ class CardForm extends React.Component {
 									onChange={this.update("answer")}
 									className="card-input" />
 							</label>
+							<img src={this.state.answer_image ? this.state.answer_image : ""} />
+							<button onClick={this.uploadImage.bind(this, "answer")}>
+								Upload Image
+							</button>
 						</div>
 						<div className="card-form-buttons">
 							<button><input type="submit" value="Submit" /></button>

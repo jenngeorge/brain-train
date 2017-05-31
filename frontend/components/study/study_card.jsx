@@ -119,7 +119,18 @@ class StudyCard extends React.Component {
 
 		let cardLis = Object.keys(this.props.cards).map(key => {
 			let card = this.props.cards[key];
-
+			let questionImage;
+	    let answerImage;
+	    if (card.question_image){
+	      questionImage = (
+	        <img src={card.question_image} alt="question-image"/>
+	      )
+	    }
+	    if (card.answer_image){
+	      answerImage = (
+	        <img src={card.answer_image} alt="answer-image"/>
+	      )
+	    }
 			return(
 				<li key={`${key}${card.user_id}`}
 					className={this.cardClassName(currentCard, card.id)}>
@@ -129,11 +140,13 @@ class StudyCard extends React.Component {
 	              <h5>
 	                {card.question}
 	              </h5>
+								{questionImage}
 	            </div>
 	            <div className="back">
 	              <h5>
 	                {card.answer}
 	              </h5>
+								{answerImage}
 	            </div>
 	          </div>
 	        </div>
