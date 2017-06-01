@@ -96,6 +96,19 @@ class CardForm extends React.Component {
 			);
 		}
 
+		let questionImage;
+		let answerImage;
+		if (this.state.question_image){
+			questionImage = (
+				<img src={this.state.question_image} alt="question-image"/>
+			)
+		}
+		if (this.state.answer_image){
+			answerImage = (
+				<img src={this.state.answer_image} alt="answer-image"/>
+			)
+		}
+
 		if (this.props.card){
 			return (
 				<div className="card-form-container">
@@ -106,12 +119,12 @@ class CardForm extends React.Component {
 								<h5>
 									Question:
 								</h5>
-								<input type="text"
+								<textarea rows="2" wrap="hard"
 									value={this.state.question}
 									onChange={this.update("question")}
 									className="card-input" />
+								{questionImage}
 							</label>
-							<img src={this.state.question_image ? this.state.question_image : ""} />
 							<button onClick={this.uploadImage.bind(this, "question")}>
 								Upload Image
 							</button>
@@ -121,12 +134,13 @@ class CardForm extends React.Component {
 								<h5>
 									Answer:
 								</h5>
-								<textarea rows="5" wrap="hard"
+								<textarea rows="2" wrap="hard"
 									value={this.state.answer}
 									onChange={this.update("answer")}
 									className="card-input" />
+								{answerImage}
 							</label>
-							<img src={this.state.answer_image ? this.state.answer_image : ""} />
+
 							<button onClick={this.uploadImage.bind(this, "answer")}>
 								Upload Image
 							</button>
