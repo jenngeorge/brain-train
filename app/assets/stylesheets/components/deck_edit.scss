@@ -49,16 +49,25 @@
   }
 }
 
+.card-answer, .card-question {
+  width: 40%;
+  min-width: 300px;
+
+  img {
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
+
 .card-answer {
-  width: 400px;
   border-left: 2px solid $darker-background;
   padding: $margin-basic;
   padding-left: $margin-basic * 2;
+}
 
-  textarea {
-    overflow: auto;
-    background-color: $background-color;
-    width: 100%;
-    padding: 10px;
-  }
+textarea.card-input{
+  overflow: auto;
+  background-color: $background-color;
+  width: 100%;
+  padding: 10px;
 }

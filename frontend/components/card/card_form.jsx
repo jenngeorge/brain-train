@@ -9,9 +9,12 @@ class CardForm extends React.Component {
 			answer: this.props.card.answer || "",
 			question: this.props.card.question || "",
       deck_id: this.props.deckId,
+			question_image: this.props.card.question_image || "",
+			answer_image: this.props.card.answer_image || ""
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleDelete = this.handleDelete.bind(this);
+		this.uploadImage = this.uploadImage.bind(this);
 	}
 
 	componentWillMount(){
@@ -22,6 +25,23 @@ class CardForm extends React.Component {
 		return e => this.setState({
 			[field]: e.currentTarget.value
 		});
+	}
+
+	uploadImage(type, e) {
+		e.preventDefault();
+		let that = this;
+		debugger
+		cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, (error, results) => {
+			if(!error){
+				// this.props.postImage(results[0]);
+				debugger
+				if (type === "question"){
+					that.setState({question_image: results[0].secure_url})
+				} else {
+					that.setState({answer_image: results[0].secure_url})
+				}
+			}
+		})
 	}
 
 	handleSubmit(e) {
@@ -67,7 +87,6 @@ class CardForm extends React.Component {
 	}
 
 	render() {
-
 		let deleteButton;
 		if (this.props.formType === "update"){
 			deleteButton = (
@@ -75,6 +94,19 @@ class CardForm extends React.Component {
 					Delete
 				</button>
 			);
+		}
+
+		let questionImage;
+		let answerImage;
+		if (this.state.question_image){
+			questionImage = (
+				<img src={this.state.question_image} alt="question-image"/>
+			)
+		}
+		if (this.state.answer_image){
+			answerImage = (
+				<img src={this.state.answer_image} alt="answer-image"/>
+			)
 		}
 
 		if (this.props.card){
@@ -87,22 +119,31 @@ class CardForm extends React.Component {
 								<h5>
 									Question:
 								</h5>
-								<input type="text"
+								<textarea rows="2" wrap="hard"
 									value={this.state.question}
 									onChange={this.update("question")}
 									className="card-input" />
+								{questionImage}
 							</label>
+							<button onClick={this.uploadImage.bind(this, "question")}>
+								Upload Image
+							</button>
 						</div>
 						<div className="card-answer">
 							<label>
 								<h5>
 									Answer:
 								</h5>
-								<textarea rows="5" wrap="hard"
+								<textarea rows="2" wrap="hard"
 									value={this.state.answer}
 									onChange={this.update("answer")}
 									className="card-input" />
+								{answerImage}
 							</label>
+
+							<button onClick={this.uploadImage.bind(this, "answer")}>
+								Upload Image
+							</button>
 						</div>
 						<div className="card-form-buttons">
 							<button><input type="submit" value="Submit" /></button>
