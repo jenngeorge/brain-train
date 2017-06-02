@@ -2,8 +2,9 @@ class Api::SubjectsController < ApplicationController
 
   def create
     @subject = Subject.new(subject_params)
-    if @subject.save
-      SubjectFollow.create!(subject_id: @subject.id, user_id: current_user.id)
+    if @subject.save!
+      debugger
+      SubjectFollow.create!(subject_id: @subject.id, user_id: subject_params["user_id"])
       render :show
     else
       render json: @subject.errors.full_messages, status: 422

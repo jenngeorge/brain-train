@@ -30,11 +30,8 @@ class CardForm extends React.Component {
 	uploadImage(type, e) {
 		e.preventDefault();
 		let that = this;
-		debugger
 		cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, (error, results) => {
 			if(!error){
-				// this.props.postImage(results[0]);
-				debugger
 				if (type === "question"){
 					that.setState({question_image: results[0].secure_url})
 				} else {
