@@ -33,7 +33,7 @@ class Api::CardsController < ApplicationController
     def index
       if params[:deckId]
         @cards = Card.includes(:card_scores).where(deck_id: params[:deckId])
-        @cards
+        @current_user_id = current_user.id
       else
         @cards = Card.includes(:card_scores).all
       end
