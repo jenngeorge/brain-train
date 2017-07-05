@@ -5,8 +5,8 @@ class SessionForm extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			email: "guest@email.com",
-			password: "password",
+			email: "",
+			password: "",
 			redirect: false };
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.switchFormLink = this.switchFormLink.bind(this);
@@ -47,7 +47,6 @@ class SessionForm extends React.Component {
 	}
 
 	switchFormLink() {
-
 		return (
 			<span onClick={this.props.switchForm}>
 				{this.props.formType === "signup" ? "sign in" : "sign up"}
@@ -98,7 +97,12 @@ class SessionForm extends React.Component {
 								className="signin-input" />
 						</label>
 						<br/>
-						<button><input type="submit" value="Submit" /></button>
+            <div className="modal-buttons">
+  						<button><input type="submit" value="Submit" /></button>
+              <button onClick={this.props.guestLogin}>
+                Guest Login
+              </button>
+            </div>
 					</div>
 				</form>
 			</div>
