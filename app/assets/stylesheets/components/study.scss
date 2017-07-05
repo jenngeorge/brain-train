@@ -32,12 +32,21 @@
 
 .study-buttons {
   margin: 0 auto;
+  margin-top: $margin-basic;
   display: flex;
   justify-content: space-between;
+
+  button:first-child {
+    margin-left: 0;
+  }
+
+  button:last-child {
+    margin-right:0;
+  }
 }
 
 .card-scores {
-  margin-top: $padding-container;
+  margin-top: $margin-basic;
 
   ul {
     display: flex;
@@ -98,7 +107,7 @@ li.current-score {
 
 .score-list {
   margin-top: $padding-container;
-  
+
   span {
     padding: 10px 15px;
     color: $white;
