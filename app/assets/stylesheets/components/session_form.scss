@@ -30,8 +30,12 @@
     font-weight: bold;
   }
 
-  button {
-    display: block;
-    margin: 0 auto;
+  // button {
+  //   display: block;
+  //   margin: 0 auto;
+  // }
+  .modal-buttons {
+    display: flex;
+    justify-content: center;
   }
 }

@@ -32,8 +32,8 @@ class Header extends React.Component{
     this.closeModal = this.closeModal.bind(this);
     this.openModal = this.openModal.bind(this);
     this.switchForm = this.switchForm.bind(this);
-
     this.handleSignout = this.handleSignout.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
   }
 
   handleSignout(){
@@ -56,10 +56,18 @@ class Header extends React.Component{
     }
   }
 
-
+  guestLogin(e){
+    e.preventDefault();
+    this.props.signin({user: {email: "guest@email.com", password: "password"}}).then(()=> {
+      if (this.props.session.currentUser){
+        window.currentUser = this.props.session.currentUser;
+        this.setState({modalOpen: false})
+        this.props.history.push("/library/")
+      }
+    });
+  }
 
   render(){
-
     let sessionButtons = () => {
       if (this.props.session.currentUser){
         return(
@@ -70,6 +78,9 @@ class Header extends React.Component{
       } else {
         return(
           <span className="signin-buttons">
+            <button onClick={this.guestLogin}>
+              Guest Login
+            </button>
             <button onClick={this.openModal.bind(this, "signin")}>
               Sign in
             </button>
@@ -115,6 +126,7 @@ class Header extends React.Component{
                 errors={this.props.errors}
                 clearErrors={this.props.clearErrors}
                 currentUser={this.props.session.currentUser}
+                guestLogin={this.guestLogin}
               />
           </Modal>
         </div>
