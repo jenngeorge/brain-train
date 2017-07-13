@@ -1,0 +1,32 @@
+house ~A:~ la casblanket a
+table ~A:~ la mesa
+apartment ~A:~ el apartamento
+chair ~A:~ la silla
+room ~A:~ el cuarto
+couch ~A:~ sofá
+living room ~A:~ la sala
+desk ~A:~ escritorio
+kitchen ~A:~ la cocina
+dishwasher ~A:~ lavaplatos
+dining room ~A:~ cuarto de cenar
+door ~A:~ el puerto
+hallway ~A:~ vestíbulo
+light ~A:~ la luz
+stairs ~A:~ escaleras
+bed ~A:~ cama
+bathroom ~A:~ el baño
+blanket ~A:~ manta
+bathtub ~A:~ bañera
+television ~A:~ televisión
+shower ~A:~ ducha
+radio ~A:~ el rádio
+sink ~A:~ la pila
+refrigerator ~A:~ la refrijedora
+roof ~A:~ azotea
+stove ~A:~ estufa
+closet ~A:~ armario
+oven ~A:~ el horno
+window ~A:~ la ventana
+garbage ~A:~ la basura
+wall ~A:~ la pared
+microwave ~A:~ microonda	

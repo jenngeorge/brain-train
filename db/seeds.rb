@@ -56,11 +56,17 @@ cognitive_science = Subject.create!(
   title: "Cognitive Science"
 )
 
+spanish = Subject.create!(
+  user_id: user1.id,
+  title: "Spanish"
+)
+
 # users following subjects
 SubjectFollow.create!(user_id: guest.id, subject_id: javascript.id)
 SubjectFollow.create!(user_id: guest.id, subject_id: perception_science.id)
 SubjectFollow.create!(user_id: guest.id, subject_id: neuroscience.id)
 SubjectFollow.create!(user_id: guest.id, subject_id: cognitive_science.id)
+SubjectFollow.create!(user_id: guest.id, subject_id: spanish.id)
 
 # decks
 
@@ -130,7 +136,47 @@ perception_modules = Deck.create!(
   subject_id: cognitive_science.id
 )
 
+common_phrases = Deck.create!(
+  user_id: user1.id,
+  title: "Common Phrases",
+  subject_id: spanish.id
+)
 
+school = Deck.create!(
+  user_id: user1.id,
+  title: "School",
+  subject_id: spanish.id
+)
+
+places = Deck.create!(
+  user_id: user1.id,
+  title: "Places",
+  subject_id: spanish.id
+)
+
+business = Deck.create!(
+  user_id: user1.id,
+  title: "Business",
+  subject_id: spanish.id
+)
+
+transportation = Deck.create!(
+  user_id: user1.id,
+  title: "Transportation",
+  subject_id: spanish.id
+)
+
+house = Deck.create!(
+  user_id: user1.id,
+  title: "House",
+  subject_id: spanish.id
+)
+
+body_and_clothing = Deck.create!(
+  user_id: user1.id,
+  title: "Body and Clothing",
+  subject_id: spanish.id
+)
 # create cards for each deck from card txt files
 decks = Deck.all
 decks.each do |deck|

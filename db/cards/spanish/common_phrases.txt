@@ -1,0 +1,29 @@
+Good morning ~A:~ Buenos días
+Good afternoon ~A:~ Buenas tardes
+Good evening (greeting) ~A:~ Buenas noches
+Hello, my name is ___ ~A:~ Hola, me llamo ___
+What is your name? ~A:~ ¿Cómo se llama usted?
+How are you? ~A:~ ¿Cómo está usted?
+I am fine ~A:~ Estoy bien.
+Nice to meet you ~A:~ Mucho gusto
+Goodbye ~A:~ Adiós.
+See you later ~A:~ Hasta luego
+I am lost. Where is the restroom? ~A:~ Estoy perdido. ¿Dónde está el baño?
+Excuse me ~A:~ Con permiso OR Perdóname
+Please ~A:~ Por favor
+Thank you ~A:~ Gracías.
+I'm sorry ~A:~ Lo siento
+Bless you ~A:~ Salud
+You are welcome (It was nothing) ~A:~ De nada
+How much does it cost? ~A:~ ¿Cuánto cuesta?
+How many are there? ~A:~ ¿Cuántos hay?
+There are many ~A:~ Hay muchos
+Do you want to buy this? ~A:~ ¿Quiere comprarlo usted
+What time is it? ~A:~ ¿Qué hora es?
+How do you say __ in Spanish? ~A:~ ¿Cómo se dice __ en Español?
+Yes ~A:~ Sí.
+No ~A:~ No
+I do not understand ~A:~ Yo no comprendo
+Would you speak slower, please ~A:~ Por favor, habla mas despacio
+Who? ~A:~ ¿Quièn?
+Why? ~A:~ ¿Por què?
