@@ -1,1 +1,36 @@
-test ~A:~ test
+lower motor control level ~A:~ (BSS) brain stem, spinal cord, sensory receptors
+Middle motor control level ~A:~ (BCTB): Basal nuclei, cerebellum, thalamus, brain stem
+Basal nuclei ~A:~ involved in motor function and cognitive abilities, gating movement function --> start/stop movement
+cerebellum ~A:~ 10% of total volume of brain, controls fine movement, balance, coordination, muscle tone, motor learning
+thalamus ~A:~ relay center
+brain stem ~A:~ basic autmatic functions (posture)
+highest motor control level ~A:~ frontal cortex
+frontal cortex ~A:~ where you make a decision to move with a particular goal
+Area 4 ~A:~ M1, primary motor cortex
+Area 6 ~A:~ SMA, PMA, higher motor area
+Premotor area (PMA) ~A:~ neurons in this area are selectively active well before movements are initiated, cells start responding after the cue appears before the movement starts, encodes intention to perform movement
+Supplementary motor area (SMA) ~A:~ actions from memory, SMA neurons are more active when performing a sequence already learned
+Primary motor cortex (M1) ~A:~ codes the initiation and execution of movement, neurons in M1 can represent multiple attributes of the movement (direction and force)
+mirror neurons ~A:~ located everywhere, respond to: 1. preparation for execution of particular movement 2. when same action is being performed by another individual
+Basal Ganglia (COVES) ~A:~ Cognitive functions, Oculomotor Functions, Voluntary Movement, Emotional Functions, Skeletomotor Functions
+striatum ~A:~ caudate nucleus, putamen
+golbus pallidus ~A:~ external, internal
+subthalamic nucleu ~A:~ located under the thalamus
+substantia nigra ~A:~ a midbrain structure that is reciprocally connected with the basal ganglia of the forebrain
+pars compacta ~A:~ source of dopamine within the motor system, inhibitory to GPi
+pars reticulata ~A:~ regulates eye movement
+Basal Ganglia ~A:~ main function is in motor control: gating initiation and termination of movements
+Inhibitory basal ganglia structures ~A:~ Globus Pallidus External, Globus Pallidus Internal, Striatum, Substantia Nigra - Pars Reticulata
+Excitatory basal ganglia structures ~A:~ Subthalamic Nucleus, Substantia Nigra Pars Compacta
+Globus Pallidus internal ~A:~ always active and inhibitory; constantly inhibiting the thalamus, prevents it from activating the cortex which is necessary for the final movement loop *as long as GPi is active we can NOT move
+cerebellar cortex areas ~A:~ spinocerebellum, cerebrocerebellum, vestibulocerebellum
+spinocerebellum ~A:~ receives input from the spinal cord, body and limb movements
+cerebrocerebellum ~A:~ receives input from cortex, planning movement and evaluating sensory information for action
+vestibulocerebellum ~A:~ receives input from the vestibular nuclei in the brainstem; involved in posture, equilibrium (balance), and eye-movements
+function of cerebellum ~A:~ motor learning, it allows us to get better at a particular task by practicing
+temporal lobe contains: ~A:~ temporal cortex: site of longer termmemory storage/ hippocampus
+inferotemporal cortex (area IT) ~A:~ higher-order visual area in the inferior temporal lobe. lesion impairs discrimination. visual area and area involved in memory storage. has fusiform face area
+declarative memory location ~A:~ hippocampus
+working memory location ~A:~ prefrontal cortex
+emotional memory location ~A:~ amygdala
+procedural memory location ~A:~ basal ganglia

@@ -1,0 +1,13 @@
+EEG ~A:~ electrodes on peoples head measure brain activity (small electric fields). can diagnose epilepsy and sleep disorders
+EEG signals: synchronized ~A:~ larger signal (large amplitude).
+EEG signals: asynchronized ~A:~ signal almost flat (low amplitude), awake
+Gamma EEG rhythm ~A:~ 16hz or higher, related to attention and alertness. may be the way we merge visual and auditory neurons by synchronizing the firing of the neurons
+Beta EEG rhythm ~A:~ 14-16hz, activated cortex, awake and in REM sleep, concentation/arousal/being alert, high levels seen with anxiety
+Alpha EEG rhythm ~A:~ 8-13hz, quiet, waking state, relaxed individuals-- state before sleep or meditation, more synchronized than Beta waves, most receptive for learning, increased serotonin production
+Theta EEG rhythm ~A:~ 4-7hz, early sleep (not too deep). somewhere between meditation and early sleep. deep meditation
+Delta EEG rhythm ~A:~ less than 4hz (0.1-2.9), dreamless deep sleep. high synchrony, high EEg amplitude, high amounts of human growth hormones are released, go into deep trance with loss of body awareness
+Stage 1 Sleep ~A:~ EEG 15-25hz, awake, high frequency, low amplitude and low voltage. transition state from high freq to low wave forms
+Stage 2 sleep ~A:~ sleep spindles and K complexes
+Stage 3 sleep ~A:~ high amplitude, low frequency (.5-1) delta waves.
+Stage 4 sleep ~A:~ dominated by slow waves
+REM Sleep ~A:~ high frequency, low amplitude (much like stage 1), looks like you're awake. one sleep cycle is 90min.

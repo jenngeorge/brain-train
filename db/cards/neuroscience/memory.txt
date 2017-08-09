@@ -1,0 +1,28 @@
+types of memory ~A:~ working, short term, long term
+working memory ~A:~ temporary form of information storage - limited in capacity and requires rehearsal (phone number)
+short term memory ~A:~ capacity for holding small amount of information readily available for short period of time (cram for a test)
+long term memory ~A:~ memory that can last as little as few days or as long as decades
+categories of memory ~A:~ declarative, nondeclarative/ implicit, procedural, emotional, "working with" memory
+"Working with" memory ~A:~ prefrontal cortex
+emotional ~A:~ amygdala; classical conditioning: conditioning someone without them being aware; if amygdala destroyed, won't form strong emotional memories
+procedural ~A:~ basal ganglia; memory that is difficult to descibe; ex: riding a bike
+nondeclarative/implicit ~A:~ requires repetition and practice over time to form, less likely to be forgotten
+declarative ~A:~ hippocampus; things you can explain, list, or describe (events, facts); easy to form, easily forgotten
+amnesia ~A:~ serious loss of memory and/or the ability to learn
+limited amnesia causes ~A:~ concussion, chronic alcoholism, encephalitis, brain tumor, stroke
+dissociated amnesia ~A:~ no other cognitive deficit (rare); memory problems are dissociated from any other problems
+transient global amnesia ~A:~ shorter period, temporary ischemia; may be a consequence of temporary blood deprivation to structures essential for learning and memory; only lasts for a period of minutes to days (severe blow to the head)
+types of amnesia ~A:~ Limited, Dissociated, Transient, retrograde, anterograde
+retrograde amnesia ~A:~ forget things you already knew
+anterograde amnesia ~A:~ inability to form new memories; (HM lost his hippocampus and frontal lobe causing anterograde amnesia)
+Engram ~A:~ hypothetical memory structure where people thought memory was stored in brain (physical representation or location of a memory) *first documented by Karl Lashley
+Hebb "cell assembly" ~A:~ group of cells that are in the area activated by external stimulus = internal representation of the stimulus. destroying a couple of the cells wont destroy the memory
+temporal lobe contains: ~A:~ temporal cortex: site of longer termmemory storage/ hippocampus
+inferotemporal cortex (area IT) ~A:~ higher-order visual area in the inferior temporal lobe. lesion impairs discrimination. visual area and area involved in memory storage. has fusiform face area
+recognition memory ~A:~ ability to judge whether a stimulus has been seen before. shown in delayed non-match to sample task with monkeys
+lesions of medial temporal lobe impair _____ delay tasks ~A:~ long delays (declarative memory). not very short delays (working memory)
+hippocampus memory function ~A:~ more active for already familiar stimulus. not a lot of activity for stimulus hippocampus hasn't seen
+declarative memory location ~A:~ hippocampus
+working memory location ~A:~ prefrontal cortex
+emotional memory location ~A:~ amygdala
+procedural memory location ~A:~ basal ganglia
