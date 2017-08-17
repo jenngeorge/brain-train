@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Route,
   Link,
-  Redirect,
   withRouter
 } from 'react-router-dom';
 import Modal from 'react-modal';
@@ -34,6 +33,13 @@ class Header extends React.Component{
     this.switchForm = this.switchForm.bind(this);
     this.handleSignout = this.handleSignout.bind(this);
     this.guestLogin = this.guestLogin.bind(this);
+  }
+
+  componentDidUpdate(prevProps){
+    if (this.props.session.currentUser && !prevProps.session.currentUser){
+      window.currentUser = this.props.session.currentUser;
+      this.setState({modalOpen: false}, this.props.history.push("/library/"));
+    }
   }
 
   handleSignout(){
@@ -68,31 +74,40 @@ class Header extends React.Component{
   }
 
   render(){
-    let sessionButtons = () => {
-      if (this.props.session.currentUser){
-        return(
-          <span className="signout-button">
-            <button onClick={this.handleSignout}>Sign Out</button>
-          </span>
-        );
-      } else {
-        return(
-          <span className="signin-buttons">
-            <button onClick={this.guestLogin}>
-              Guest Login
-            </button>
-            <button onClick={this.openModal.bind(this, "signin")}>
-              Sign in
-            </button>
-            <button onClick={this.openModal.bind(this, "signup")}>
-              Sign up
-            </button>
-          </span>
-        );
-      }
-    };
+    if (!this.props.session.currentUser){
+      return(
+        <span className="signin-buttons">
+          <button onClick={this.guestLogin}>
+            Guest Login
+          </button>
+          <button onClick={this.openModal.bind(this, "signin")}>
+            Sign in
+          </button>
+          <button onClick={this.openModal.bind(this, "signup")}>
+            Sign up
+          </button>
 
-    return(
+          <Modal
+            isOpen={this.state.modalOpen}
+            onRequestClose={this.closeModal}
+            contentLabel="Modal"
+            style={this.modalStyle}>
+              <SessionForm
+                formType={this.state.formType}
+                signout={this.props.signout}
+                signin={this.props.signin}
+                signup={this.props.signup}
+                switchForm={this.switchForm}
+                errors={this.props.errors}
+                clearErrors={this.props.clearErrors}
+                currentUser={this.props.session.currentUser}
+                guestLogin={this.guestLogin}
+              />
+          </Modal>
+        </span>
+      );
+    } else {
+      return(
         <div className="header-container cf">
           <span className="logo button">
             <Link to="/welcome">
@@ -109,30 +124,13 @@ class Header extends React.Component{
               Subjects
             </Link>
           </span>
-          {sessionButtons()}
-
-            <Modal
-            isOpen={this.state.modalOpen}
-            onRequestClose={this.closeModal}
-            contentLabel="Modal"
-            style={this.modalStyle}>
-              <SessionForm
-                formType={this.state.formType}
-                signout={this.props.signout}
-                signin={this.props.signin}
-                signup={this.props.signup}
-                switchForm={this.switchForm}
-                closeModal={this.closeModal}
-                errors={this.props.errors}
-                clearErrors={this.props.clearErrors}
-                currentUser={this.props.session.currentUser}
-                guestLogin={this.guestLogin}
-              />
-          </Modal>
+          <span className="signout-button">
+            <button onClick={this.handleSignout}>Sign Out</button>
+          </span>
         </div>
       );
+    }
   }
-
 }
 
 export default withRouter(Header);
