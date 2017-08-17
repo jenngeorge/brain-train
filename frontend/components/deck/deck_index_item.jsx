@@ -26,8 +26,8 @@ class DeckIndexItem extends React.Component{
     }
 
     return(
-      <div>
-        <h2 onClick={this.handleStudyClick}>
+      <div onClick={this.handleStudyClick}>
+        <h2>
           {this.props.deck.title}
         </h2>
         {editDeck}

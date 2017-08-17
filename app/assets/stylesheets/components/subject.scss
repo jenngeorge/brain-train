@@ -13,6 +13,10 @@
     text-align: center;
     a {
       color: $primary-color;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
@@ -72,11 +76,18 @@
 }
 
 .deck-index-item {
-  padding: $margin-basic;
   margin: $margin-basic 0;
   background-color: $white;
   border-radius: 5px;
   display: block;
+
+  &:hover {
+    border: 2px solid $primary-color;
+  }
+
+  div {
+    padding: $margin-basic;
+  }
 
   h2 {
     display: inline;

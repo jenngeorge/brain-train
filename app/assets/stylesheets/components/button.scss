@@ -6,3 +6,7 @@
   background-color: $secondary-color;
   color: $white;
 }
+
+.button:hover, button:hover {
+  background: darken($secondary-color, 10%);
+}

@@ -109,21 +109,21 @@ class Header extends React.Component{
     } else {
       return(
         <div className="header-container cf">
-          <span className="logo button">
-            <Link to="/welcome">
+          <Link to="/welcome">
+            <span className="logo button">
               BrainTrain
-            </Link>
-          </span>
-          <span className="header-links button">
-            <Link to="/library">
+            </span>
+          </Link>
+          <Link to="/library">
+            <span className="header-links button">
               Library
-            </Link>
-          </span>
-          <span className="header-links button">
-            <Link to="/search">
+            </span>
+          </Link>
+          <Link to="/search">
+            <span className="header-links button">
               Subjects
-            </Link>
-          </span>
+            </span>
+          </Link>
           <span className="signout-button">
             <button onClick={this.handleSignout}>Sign Out</button>
           </span>

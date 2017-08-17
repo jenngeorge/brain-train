@@ -43,4 +43,7 @@
 
 .toggle-details {
   color: $primary-color;
+  &:hover{
+    text-decoration: underline;
+  }
 }
