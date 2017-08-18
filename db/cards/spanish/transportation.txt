@@ -1,0 +1,22 @@
+by airplane ~A:~ en avión
+engine ~A:~ motor
+by bicycle ~A:~ en bicicleta
+wheel ~A:~ llanta
+by boat ~A:~ en barco
+map ~A:~ mapa
+by bus ~A:~ en bus
+directions ~A:~ los direcciones
+by car ~A:~ en automovíl
+to accelerate ~A:~ acelerar
+on foot ~A:~ a pie
+to break ~A:~ retardarse
+by moped ~A:~ en ciclomotor
+to stop ~A:~ parar
+by motorcycle ~A:~ en motocicleta
+to go ~A:~ ir
+by subway ~A:~ en subterráneo
+turn left ~A:~ dar vuelta a la izqierda
+by taxi ~A:~ en taxi
+turn right ~A:~ dar vuelta a la derecha
+by train ~A:~ en tren
+go straight ~A:~ ir derecho	

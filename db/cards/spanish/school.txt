@@ -1,0 +1,38 @@
+accounting ~A:~ contabilidad
+algebra ~A:~ álgebra
+art ~A:~ arte
+biology ~A:~ biología
+business ~A:~ negocio
+paper ~A:~ el papel
+calculus ~A:~ cálculo
+pencil ~A:~ el lapiz
+chemistry ~A:~ química
+pen ~A:~ el lapicero
+computer science ~A:~ informática
+professor ~A:~ profesor/a
+dance ~A:~ danza
+school ~A:~ escuela
+economics ~A:~ economía
+student ~A:~ estudiente
+foreign languages ~A:~ idiomas extranjeros
+teacher ~A:~ maestro/maestra
+geography ~A:~ geografía
+test/quiz/exam ~A:~ el examen
+geometry ~A:~ geometría
+university ~A:~ la universidad
+history ~A:~ historia
+to study ~A:~ estudiar
+math ~A:~ matemáticas
+to learn ~A:~ aprender
+music ~A:~ música
+to teach ~A:~ enseñar
+physical education ~A:~ educación física
+to write ~A:~ escribir
+physics ~A:~ física
+to draw ~A:~ dibujar
+political science ~A:~ ciencia política
+to read ~A:~ leer
+book ~A:~ el libro
+college ~A:~ el colegio
+computer ~A:~ la computadora
+dictionary ~A:~ el diccionário

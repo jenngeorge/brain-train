@@ -1,0 +1,22 @@
+office ~A:~ la officina
+currency exchange ~A:~ el intercambio de modernidad
+city ~A:~ la ciudad
+customs ~A:~ las aduanas
+the rent ~A:~ la renta
+entrance ~A:~ la entrada
+tax ~A:~ el impuesto
+exit ~A:~ el salido
+the cost ~A:~ la cuesta
+information ~A:~ la información
+price ~A:~ el précio
+to pay ~A:~ pagar
+bill ~A:~ la cuenta
+to buy ~A:~ comprar
+estimate ~A:~ la estimación
+to sell ~A:~ vender
+to cost ~A:~ el cheque	check	costar
+travelers check ~A:~ el cheque de viajar
+to rent ~A:~ alquiler
+passport ~A:~ el passaporte
+to deposit ~A:~ depositar
+luggage/baggage ~A:~ el equipaje	

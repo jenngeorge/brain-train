@@ -1,0 +1,29 @@
+airport ~A:~ el aeropuerto
+pastry shop ~A:~ panaderia
+bakery ~A:~ lapanadería
+park ~A:~ el parque
+bank ~A:~ el banco
+pharmacy ~A:~ la farmácia
+beach ~A:~ la playa
+police station ~A:~ la estación de la policía	
+cafe ~A:~ el café
+post office ~A:~ los correos
+church ~A:~ la iglesia
+pool ~A:~ la piscina
+factory ~A:~ la fábrica
+restaurant ~A:~ el restaurante
+garden ~A:~ el gardín
+school ~A:~ la escuela
+store ~A:~ almacén	grocery
+stadium ~A:~ el estadio
+home ~A:~ el hogar
+store ~A:~ tienda
+hospital ~A:~ la hospital
+train station ~A:~ la estación del tren
+library ~A:~ la biblioteca
+town hall ~A:~ pasillo de ciudad
+market ~A:~ el mercado
+bookstore ~A:~ librería
+movie theater ~A:~ el cine
+zoo ~A:~ parque zoológico
+museum ~A:~ el museo

@@ -1,0 +1,35 @@
+types of muscle ~A:~ skeletal, cardiac, smooth
+skeletal muscle ~A:~ links most of our bones, polynucleated cell - single muscle cell with many nuclei
+cardiac muscle ~A:~ involuntary muscle, ex: heart
+smooth muscle ~A:~ involuntary muscle, ex: lines gut, blood vessels
+muscle fiber ~A:~ single muscle cell, composed of myofibril
+Myofibril ~A:~ made of group of sarcomeres, surrounded by T-tubules, structure that contracts
+sarcomeres ~A:~ made of group of proteins put together that contract making the cell and then the muscle contract, made of thick and thin fibers
+motor unit ~A:~ alpha motor neuron + muscle fiber it innervates
+large motor units ~A:~ made of many muscle fibers. larger muscles with smaller range of motion
+smaller motor units ~A:~ few muscle fibers. allow fine motor control
+stimulation of muscles ~A:~ stimulate one motor neuron to stimulate the fibers inside a muscle
+neuromuscular junction ~A:~ point of synaptic contact between the axon terminal of a motor neuron and the muscle fiber it controls
+muscle/motor twitch ~A:~ single muscle activation (constant activation of group of muscles = no twitching)
+neuromuscular junction activation process ~A:~ 1. motor neuron fires AP 2. releases Ach 3. binds Ach to ionotropic receptors 4. Na+ enters via channels 5. muscle fiber depolarizes 6. gated Na+ opens 7. muscle fiber fires AP
+sarcoplasmic reticulum (net) ~A:~ where Ca2+ is stored; calcium is needed to contract the muscle
+T-tubules (electric fence) ~A:~ membrane that surrounds the myofibril/component of a muscle cell and enters in little tube like structures, contracts muscle at the same time everywhere
+thick filament (sarcomere) ~A:~ myosin
+thin filament (sarcomere) ~A:~ actin, troponin, tropomyosin
+Sarcomere contraction ~A:~ when thick and thin filaments contract
+muscle contraction ~A:~ Muscle cell always stores Calcium in sarcoplasmic reticulum (through pump). Muscle relaxes when no calcium is present
+voluntary actions ~A:~ movements accompanied by a conscious awareness of waht we are doing and our attention is direction toward the action or its purpose (scratch nose)
+involuntary actions ~A:~ movements that are unconscious, automatic, or a reflex (heart beating)
+motor neurons ~A:~ located in ventral horn, innervate muscles
+ventral horn ~A:~ located in spinal cord, contains motor neurons that affect axial muscles, cell bodies of alpha motor neurons located in ventral horn
+alpha motor neurons ~A:~ large lower motor neurons of the brain stem and spinal cord that innervate muscle fibers of skeletal muscles
+motor neuron pool ~A:~ alpha motor neurons that innervate single muscle
+muscle spindles (stretch receptors) ~A:~ specialized structure that contains several types of skeletal muscle fibers within most skeletal muscles
+proprioreceptors ~A:~ receptors that are a component of the somatic sensory system that informs us how our body is positioned and moving in space
+1a axons ~A:~ thickest myelinated axons that conduct AP very rapidly, enter the spinal cord via the dorsal roots --> form excitatory synapses on alpha motor neurons
+myotatic reflex (stretch reflex) ~A:~ (knee jerk) motor neurons receive sensory feedback from the muscle, discharges 1a sensory axon and alpha motor neuron it acts on, muscle stretched discharge rate increase, muscles shortened discharge rate decreases
+gamma motor neurons ~A:~ innervate intrafusal fibers, adjust the set point of muscles
+1b sensory axons ~A:~ slightly smaller than 1a axons that innervate muscle spindles
+muscle spindles ~A:~ sensitive to changes in muscle length (1a activity)
+Amytrophic Lateral Sclerosis (ALS or Lou Gerig) ~A:~ caused by degeneration of the alpha motor neurons and their input from the cortex
+Myasthenia Gravis ~A:~ the Ach is released at the neuromuscular junction fails to consistently elicit an AP in the muscle fiber because the body is making antibodies against the Ach receptors

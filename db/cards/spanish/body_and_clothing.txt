@@ -1,0 +1,45 @@
+head ~A:~ la cabeza
+hat ~A:~ el sombrero
+brain ~A:~ el cerebro
+earrings ~A:~ los pendientes
+hair ~A:~ el pelo
+shirt ~A:~ la camisa
+face ~A:~ la cara
+blouse ~A:~ la blusa
+ear ~A:~ el oreja
+dress ~A:~ el vestido
+eye ~A:~ el ojo
+pants ~A:~ los pantelones
+mouth ~A:~ la boca
+jeans ~A:~ pantalones vaqueros
+nose ~A:~ la naríz
+skirt ~A:~ la falda
+neck ~A:~ el cuello
+socks ~A:~ los calcetines
+shoulder ~A:~ el hombro
+shoes ~A:~ los zapatos
+chest ~A:~ el pecho
+swimsuit ~A:~ el traje de bañar
+stomach ~A:~ el estómigo
+underwear ~A:~ ropa anterior
+waist~A:~ la cintura
+gloves ~A:~ los guantes
+back ~A:~ la espalda
+belt ~A:~ la correa
+heart~A:~ el corazón
+coat ~A:~ la capa
+arm ~A:~ el brazo
+ring ~A:~ el anillo
+elbow ~A:~ el codo
+wrist ~A:~ la muñeca
+My arm hurts. ~A:~ Me duelle en mi brazo.
+hand ~A:~ el mano
+Are you hurt? ~A:~ ¿Estás lastimado?
+finger ~A:~ el dedo
+I have a headache. ~A:~ Tengo dolor de la cabeza.
+leg ~A:~ la pierna
+Do you have aspirin? ~A:~ ¿Tienes aspirina?
+foot ~A:~ el pie
+You are hurting me. ~A:~ Me estás lastimando.
+toe ~A:~ el dedo del pie
+Don't hurt him/her. ~A:~ No lo/la lastimas.
