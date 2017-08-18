@@ -18,6 +18,7 @@ respond_to :json
     if resource.persisted?
       if resource.active_for_authentication?
         sign_up(resource_name, resource)
+        sign_in(resource)
         render json: resource.as_json, status: 201
       else
         set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
