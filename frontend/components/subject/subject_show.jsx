@@ -76,6 +76,10 @@ class SubjectShow extends React.Component {
 	}
 
 	render() {
+    if (!this.props.subjects[this.props.subjectId]){
+      return <Redirect to={`/library`} />;
+    }
+
 		if (this.state.redirect) {
 			if (this.state.redirect === "noSubjects") {
 				return <Redirect to={`/library`} />;

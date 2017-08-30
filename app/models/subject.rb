@@ -1,5 +1,6 @@
 class Subject < ApplicationRecord
   validates :user_id, :title, presence: true
+  validates :title, uniqueness: true
 
   belongs_to :user
 

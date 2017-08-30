@@ -39,7 +39,9 @@ class SubjectForm extends React.Component {
 						that.props.receiveSubject(createdSubject);
 					});
 				},
-				(err) => that.props.receiveErrors(err.responseJSON)
+				(err) => {
+          that.props.receiveErrors(err.responseJSON)
+        }
 			);
 		} else {
 			let subject = {
@@ -58,13 +60,9 @@ class SubjectForm extends React.Component {
 
 	renderErrors() {
 		return(
-			<ul>
-				{Object.keys(this.props.errors).map((error, i) => (
-					<li key={`error-${i}`}>
-						{`${error} ${this.props.errors[error][0]}`}
-					</li>
-				))}
-			</ul>
+			<p>
+        {this.props.errors[0]}
+			</p>
 		);
 	}
 
@@ -94,17 +92,17 @@ class SubjectForm extends React.Component {
 					</button>
 				);
 			}
-
 			return (
 				<div className="subject-form-container">
 					<form onSubmit={this.handleSubmit} className="subject-form">
-						{this.renderErrors()}
+
 						<label> Title:
 							<input type="text"
 								value={this.state.title}
 								onChange={this.update("title")}
 								className="subject-input" />
 						</label>
+            {this.renderErrors()}
 						<button><input type="submit" value="Submit" /></button>
 					</form>
 					{deleteButton}
