@@ -9,17 +9,21 @@
 
 .hidden-card-prev{
   z-index: 1;
+  -webkit-transition: 1s;
   transition: all 1s ease;
   position: absolute;
   top: 0;
+  -webkit-transform: translateX(110%);
   transform: translateX(110%);
 }
 
 .hidden-card-next{
   z-index: 1;
+  -webkit-transition: 1s;
   transition: all 1s ease;
   position: absolute;
   top: 0;
+  -webkit-transform: translateX(-110%);
   transform: translateX(-110%);
 }
 
