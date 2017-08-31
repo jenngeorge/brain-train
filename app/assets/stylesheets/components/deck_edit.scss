@@ -84,3 +84,12 @@ textarea.card-input{
     border-bottom: 1px solid $darker-background;
   }
 }
+
+.deck-study {
+  display: block;
+  color: $primary-color;
+  font-size: 1em;
+  &:hover {
+    text-decoration: underline;
+  }
+}

@@ -66,6 +66,9 @@ class DeckEdit extends React.Component{
     let deck = this.props.deck || {};
     return(
       <div className="deck-edit">
+        <Link to={`/study/${this.props.deckId}`} className="deck-study">
+          Study {deck.title}
+        </Link>
         <h1>
           {deck.title}
         </h1>
