@@ -1,0 +1,19 @@
+zero ~A:~ ling4 ~IMG~ http://res.cloudinary.com/jenngeorge/image/upload/v1504625956/cantonese/numbers/zero.png
+one ~A:~ yat1 ~IMG~ http://res.cloudinary.com/jenngeorge/image/upload/v1504626030/cantonese/numbers/one.png
+two ~A:~ yi6 ~IMG~ http://res.cloudinary.com/jenngeorge/image/upload/v1504626352/cantonese/numbers/two.png
+three ~A:~ saam1 ~IMG~ http://res.cloudinary.com/jenngeorge/image/upload/v1504626380/cantonese/numbers/three.png
+four ~A:~ sei3 ~IMG~ http://res.cloudinary.com/jenngeorge/image/upload/v1504626397/cantonese/numbers/four.png
+five ~A:~ m5 ~IMG~ http://res.cloudinary.com/jenngeorge/image/upload/v1504626397/cantonese/numbers/five.png
+six ~A:~ luk6 ~IMG~ http://res.cloudinary.com/jenngeorge/image/upload/v1504626397/cantonese/numbers/six.png
+seven ~A:~ chat1 ~IMG~ http://res.cloudinary.com/jenngeorge/image/upload/v1504626397/cantonese/numbers/seven.png
+eight ~A:~ baat3 ~IMG~ http://res.cloudinary.com/jenngeorge/image/upload/v1504626397/cantonese/numbers/eight.png
+nine ~A:~ gau2 ~IMG~ http://res.cloudinary.com/jenngeorge/image/upload/v1504626397/cantonese/numbers/nine.png
+ten ~A:~ sap6 ~IMG~ http://res.cloudinary.com/jenngeorge/image/upload/v1504626397/cantonese/numbers/ten.png
+eleven ~A:~ sap1 yat1 ~IMG~ http://res.cloudinary.com/jenngeorge/image/upload/v1504626397/cantonese/numbers/eleven.png
+twelve ~A:~ sap1 yi6 ~IMG~ http://res.cloudinary.com/jenngeorge/image/upload/v1504626397/cantonese/numbers/twelve.png
+twenty ~A:~ yi6 sap1 ~IMG~ http://res.cloudinary.com/jenngeorge/image/upload/v1504626397/cantonese/numbers/twenty.png
+thirty ~A:~ saam1 sap6 ~IMG~ http://res.cloudinary.com/jenngeorge/image/upload/v1504626397/cantonese/numbers/thirty.png
+one hundred ~A:~ yat1 baak3 ~IMG~ http://res.cloudinary.com/jenngeorge/image/upload/v1504626397/cantonese/numbers/one-hundred.png
+one thousand ~A:~ yat1 chin1 ~IMG~ http://res.cloudinary.com/jenngeorge/image/upload/v1504626397/cantonese/numbers/one-thousand.png
+ten thousand ~A:~ yat1 maan6 ~IMG~ http://res.cloudinary.com/jenngeorge/image/upload/v1504626397/cantonese/numbers/ten-thousand.png
+half ~A:~ bun3 ~IMG~ http://res.cloudinary.com/jenngeorge/image/upload/v1504626397/cantonese/numbers/half.png

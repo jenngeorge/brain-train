@@ -36,16 +36,6 @@ perception_science = Subject.create!(
   user_id: user1.id,
   title: "Perception Science" )
 
-statistics = Subject.create!(
-  user_id: user1.id,
-  title: "Statistics"
-)
-
-javascript = Subject.create!(
-  user_id: user1.id,
-  title: "Javascript"
-)
-
 cognitive_science = Subject.create!(
   user_id: user1.id,
   title: "Cognitive Science"
@@ -61,13 +51,18 @@ cantonese = Subject.create!(
   title: "Cantonese"
 )
 
+marine_life = Subject.create!(
+  user_id: user1.id,
+  title: "Marine Life"
+)
+
 # users following subjects
-SubjectFollow.create!(user_id: guest.id, subject_id: javascript.id)
 SubjectFollow.create!(user_id: guest.id, subject_id: perception_science.id)
 SubjectFollow.create!(user_id: guest.id, subject_id: neuroscience.id)
 SubjectFollow.create!(user_id: guest.id, subject_id: cognitive_science.id)
 SubjectFollow.create!(user_id: guest.id, subject_id: spanish.id)
 SubjectFollow.create!(user_id: guest.id, subject_id: cantonese.id)
+SubjectFollow.create!(user_id: guest.id, subject_id: marine_life.id)
 
 # decks
 
@@ -131,6 +126,8 @@ perception_modules = Deck.create!(
   subject_id: cognitive_science.id
 )
 
+# spanish decks
+
 common_phrases = Deck.create!(
   user_id: user1.id,
   title: "Common Phrases",
@@ -173,6 +170,51 @@ body_and_clothing = Deck.create!(
   subject_id: spanish.id
 )
 
+# canto decks
+numbers = Deck.create!(
+  user_id: user1.id,
+  title: "Numbers",
+  subject_id: cantonese.id
+)
+
+common_phrases = Deck.create!(
+  user_id: user1.id,
+  title: "Common Phrases",
+  subject_id: cantonese.id
+)
+
+feelings = Deck.create!(
+  user_id: user1.id,
+  title: "Feelings",
+  subject_id: cantonese.id
+)
+
+restaurant_phrases = Deck.create!(
+  user_id: user1.id,
+  title: "Restaurant Phrases",
+  subject_id: cantonese.id
+)
+
+activities = Deck.create!(
+  user_id: user1.id,
+  title: "Activities",
+  subject_id: cantonese.id
+)
+
+
+# marine life decks
+
+octopuses = Deck.create!(
+  user_id: user1.id,
+  title: "Octopuses",
+  subject_id: marine_life.id
+)
+
+jellyfish = Deck.create!(
+  user_id: user1.id,
+  title: "Jellyfish",
+  subject_id: marine_life.id
+)
 
 # create cards for each deck from card txt files
 decks = Deck.all
@@ -183,8 +225,10 @@ decks.each do |deck|
   cards.each do |card|
     Card.create!(
       deck_id: deck.id,
-      question: card[0],
-      answer: card[1]
+      question: card["question"],
+      question_image: card["question_image"],
+      answer: card["answer"],
+      answer_image: card["answer_image"]
     )
   end
 end
