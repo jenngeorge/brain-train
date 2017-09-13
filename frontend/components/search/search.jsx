@@ -20,7 +20,7 @@ class Search extends React.Component{
           subjects={this.props.subjects}
           currentUser={this.props.currentUser}
           followSubject={this.props.createSubjectFollow}
-          unfollowSubject={this.props.deleteSubjectFollow}
+          unfollowSubject={this.props.deleteSubjectFollowSearch}
           decks={this.props.decks}/>
       </div>
     );

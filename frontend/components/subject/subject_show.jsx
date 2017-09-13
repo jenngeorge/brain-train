@@ -33,7 +33,7 @@ class SubjectShow extends React.Component {
 	}
 
 	unfollowSubject(){
-		this.props.deleteSubjectFollow(this.props.subjectId)
+		this.props.deleteSubjectFollowIndex(this.props.subjectId)
 			.then(() => {
 				if (Object.keys(this.props.subjects).length > 0) {
 					this.setState({redirect: Object.keys(this.props.subjects)[0]});

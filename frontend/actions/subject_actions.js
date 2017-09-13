@@ -57,8 +57,14 @@ export const createSubjectFollow = subject_id => dispatch => (
       err => dispatch(receiveErrors(err.responseJSON)))
 );
 
-export const deleteSubjectFollow = subject_id => dispatch => (
+export const deleteSubjectFollowIndex = subject_id => dispatch => (
   APIUtil.deleteSubjectFollow(subject_id)
     .then(unfollowedSubject => dispatch(removeSubject(unfollowedSubject.id)),
+      err => dispatch(receiveErrors(err.responseJSON)))
+);
+
+export const deleteSubjectFollowSearch = subject_id => dispatch => (
+  APIUtil.deleteSubjectFollow(subject_id)
+    .then(unfollowedSubject => dispatch(receiveSubject(unfollowedSubject)),
       err => dispatch(receiveErrors(err.responseJSON)))
 );

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchSubjects,
         createSubjectFollow,
-        deleteSubjectFollow } from '../../actions/subject_actions';
+        deleteSubjectFollowSearch } from '../../actions/subject_actions';
 import { fetchDecks } from '../../actions/deck_actions';
 
 import Search from './search.jsx';
@@ -16,7 +16,7 @@ const mapStateToProps = (state, props) => ({
 const mapDispatchToProps = dispatch => ({
   fetchSubjects: search => dispatch(fetchSubjects(search)),
   createSubjectFollow: subjectId => dispatch(createSubjectFollow(subjectId)),
-  deleteSubjectFollow: subjectId => dispatch(deleteSubjectFollow(subjectId)),
+  deleteSubjectFollowSearch: subjectId => dispatch(deleteSubjectFollowSearch(subjectId)),
   fetchDecks: () => dispatch(fetchDecks())
 });
 
