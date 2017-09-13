@@ -8,13 +8,15 @@ class SubjectIndex extends React.Component{
   }
 
   render(){
-    let subjectLis = this.props.subjectIds.map(key => (
-      <Link to={`/library/${key}`} key={`subject${key}`}>
+    const that = this;
+    let subjectLis = Object.keys(this.props.subjects).map(key => {
+      return (<Link to={`/library/${key}`}
+        key={`subject${key}${this.props.subjects[key].title}`}>
         <li className={`${key}` === this.props.selectedSubject ? "selected-subject" : ""}>
-           {this.props.subjects[key] ? this.props.subjects[key].title : ""}
+           {this.props.subjects[key].title}
         </li>
-      </Link>
-    ));
+      </Link>);
+    });
 
     return(
       <ul className="subject-index">
